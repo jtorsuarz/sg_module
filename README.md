@@ -1,9 +1,9 @@
 # sg_module
  Modulo RP - SG
 
-
- PHP SPARK - CREATION: 
- Commands: 
+PHP SPARK - CREATION:
+---------------------------------------------------------------------
+Commands: 
 ---------------------------------------------------------------------
 php spark make:controller (crea controlador)
 ---------------------------------------------------------------------
