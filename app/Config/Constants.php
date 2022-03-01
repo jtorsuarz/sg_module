@@ -83,15 +83,6 @@ defined('ENVIRONMENT') || define('ENVIRONMENT', 'development');
 
 /** VARIABLES DE ENTORNO */
 switch(ENVIRONMENT) {
-    /*
-    case 'development':
-        define("BASE_URL", "https://fichajeapi.snntech.com/");
-		define("DB_HOST","db5002725525.hosting-data.io");
-        define("DB_USER","dbu1704797");
-        define("DB_PASS","Kjkszpjk.99");
-        define("DB_DATABASE","dbs2172122");
-	break;
-    */
     case 'development':
 		define("BASE_URL", "https://localhost/SG_MODULE/public/");
         define("DB_HOST","localhost");
