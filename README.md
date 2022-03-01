@@ -11,7 +11,7 @@ PHP SPARK - CREATION:
 ---------------------------------------------------------------------
 Para el correcto funcionamiento del modulo, se debe configurar el archivo:
 
-   Ruta:   app\Config\Constants.php
+Ruta:   app\Config\Constants.php
    
    Codigo a Editar:
    switch(ENVIRONMENT) {
