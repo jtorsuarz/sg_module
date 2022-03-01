@@ -3,7 +3,7 @@
 
 
  PHP SPARK - CREATION: 
-   Commands: 
+ Commands: 
 ---------------------------------------------------------------------
 php spark make:controller (crea controlador)
 ---------------------------------------------------------------------
