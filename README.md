@@ -26,4 +26,12 @@ composer update --ignore-platform-reqs  // ERROR BOOSTRAP FILE - VENDOR
 
 Error php init - ir a la ruta del xampp: xampp/php/php.ini y cambiar el ";extension=php_intl" -> "extension=php_intl"
 
-# IMPORTANTE - CREAR UNA BASE DE DATOS CON EL NOMBRE = "agse"
+# IMPORTANTE - Base de Datos
+
+1.- CREAR UNA BASE DE DATOS CON EL NOMBRE = "agse"
+
+
+2.- Desde el proyecto lanzar el siguiente comando:
+
+php spark migrate:refresh <----- Crear las tablas.
+php spark migrate:rollback <----- Limpia las tablas.
