@@ -19,3 +19,8 @@ php spark make:entity (crea la entidad)
 
 Configurar el Archivo en la Ruta:   app\Config\Constants.php
 
+composer update --ignore-platform-reqs
+
+
+config xampp phpinitl
+
