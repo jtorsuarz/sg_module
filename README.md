@@ -1,4 +1,4 @@
-# sg_module
+# sg_module 
  Modulo RP - SG
  
  
@@ -26,6 +26,4 @@ composer update --ignore-platform-reqs  // ERROR BOOSTRAP FILE - VENDOR
 
 Error php init - ir a la ruta del xampp: xampp/php/php.ini y cambiar el ";extension=php_intl" -> "extension=php_intl"
 
-# IMPORTANTE - AL CREAR UN METODO PARA INDEXARLO ES NECESARIO AGREGAR LA RUTA EN
-
-config/routes
+# IMPORTANTE - CREAR UNA BASE DE DATOS CON EL NOMBRE = "agse"
