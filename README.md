@@ -7,24 +7,39 @@
 
 Commands: 
 
+Crea controlador
 
-php spark make:controller (crea controlador)
+    php spark make:controller
 
+Crea modelo
 
-php spark make:model (crea modelo)
+    php spark make:model
 
+Crea entity
 
-php spark make:entity (crea la entidad)
+    php spark make:entity
 
 # CONFIGURACIONES IMPORTANTES - CORRECTO FUNCIONAMIENTO
 
-Configurar el Archivo en la Ruta:   app\Config\Constants.php - LINEA 85 en adelante.
+Configurar el Archivo en la Ruta (LINEA 85 en adelante.):
 
+     app\Config\Constants.php
 
-composer update --ignore-platform-reqs  // ERROR BOOSTRAP FILE - VENDOR
+Solucion al error de boostrap (Tener el composer instalado):
 
+    composer update --ignore-platform-reqs
 
-Error php init - ir a la ruta del xampp: xampp/php/php.ini y cambiar el ";extension=php_intl" -> "extension=php_intl"
+  Error php init ir a la ruta del xampp:
+
+    xampp/php/php.ini
+    
+  Buscar la siguiente Linea:
+  
+    ;extension=php_intl  
+    
+  y editarla, dejarla asi:
+  
+    extension=php_intl
 
 # IMPORTANTE - Base de Datos
 
@@ -34,10 +49,10 @@ Error php init - ir a la ruta del xampp: xampp/php/php.ini y cambiar el ";extens
 2.- Desde el proyecto lanzar el siguiente comando:
 
 
-<----- Crear las tablas.
+Crear las tablas.
     
     php spark migrate:refresh 
  
- <----- Limpia las tablas.
+ Limpia las tablas.
  
     php spark migrate:rollback
