@@ -34,6 +34,10 @@ Error php init - ir a la ruta del xampp: xampp/php/php.ini y cambiar el ";extens
 2.- Desde el proyecto lanzar el siguiente comando:
 
 
-    php spark migrate:refresh <----- Crear las tablas.
+<----- Crear las tablas.
     
-    php spark migrate:rollback <----- Limpia las tablas.
+    php spark migrate:refresh 
+ 
+ <----- Limpia las tablas.
+ 
+    php spark migrate:rollback
