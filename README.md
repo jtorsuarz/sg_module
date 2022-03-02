@@ -2,10 +2,7 @@
  Modulo RP - SG
  
  
- PHP SPARK - CREATION:
-
-
-Commands: 
+# PHP SPARK - CREATION:
 
 Crea controlador
 
