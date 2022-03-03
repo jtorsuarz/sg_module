@@ -42,7 +42,7 @@ $routes->post('loggers', 'Login::loggers', ['as' => 'Signin']);
 $routes->group('/',['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
 
 	$routes->get('admin', 'Login::admin', ['as' => 'admin']);
-
+	$routes->get('listEmpleados', 'Empleado::getListEmpleados', ['as' => 'listarEmpleados']);
 
 });
 /*

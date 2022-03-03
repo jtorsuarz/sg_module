@@ -15,4 +15,15 @@ class Departamento extends Model
     protected $protectFields    = true;
     protected $allowedFields    = ['id_depart','nombre', 'descripcion'];
 
+    // get deppartamento name
+    public function getDepartamentoName($id)
+    {
+        $data = $this->select('nombre')
+            ->where('id_depart', $id)
+            ->get()
+            ->getRow();
+
+        return $data->nombre;
+    }
+
 }
