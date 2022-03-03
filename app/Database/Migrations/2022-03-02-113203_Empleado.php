@@ -50,12 +50,10 @@ class Empleado extends Migration
             ],
             'fehca_inicio_vacaciones'          => [
                 'type'           => 'DATE',
-                'unsigned'       => true,
                 'null'           => true,
             ],
             'fehca_fin_vacaciones'          => [
                 'type'           => 'DATE',
-                'unsigned'       => true,
                 'null'           => true,
             ],
         ]);
