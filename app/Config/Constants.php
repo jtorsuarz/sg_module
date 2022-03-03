@@ -101,3 +101,15 @@ switch(ENVIRONMENT) {
         define("DB_DATABASE","databse");
 	break;
 }
+
+
+
+define("btn_ver", "<i class='fa fa-eye'></i> Ver");
+define("btn_editar", "<i class='fa fa-edit'></i> Editar");
+define("btn_elimnar", "<i class='fa fa-trash'></i> Eliminar");
+define("btn_resultados", "<i class='mdi mdi-chart-areaspline'></i> Resultados");
+
+define("btn_ver_class", "btn btn-info btn-xl");
+define("btn_editar_class", "btn btn-success btn-xl");
+define("btn_elimnar_class", "btn btn-danger btn-xl");
+define("btn_resultados_class", "btn btn-info btn-xl");
