@@ -87,7 +87,7 @@ defined('ENVIRONMENT') || define('ENVIRONMENT', 'development');
 /** VARIABLES DE ENTORNO */
 switch(ENVIRONMENT) {
     case 'development':
-		define("BASE_URL", "https://localhost/module_rrhh/");
+		define("BASE_URL", "https://localhost/sg_module/");
         define("DB_HOST","localhost");
         define("DB_USER","root");
         define("DB_PASS","");
