@@ -11,7 +11,7 @@
                 <a class="sidebar-user" data-toggle="collapse" href="#sidebar-highlight" aria-expanded="false" aria-controls="sidebar-highlight">
 
                     <div class="sidebar-user-img">
-                        <img src="http://via.placeholder.com/500x500" alt="" class="img-circle img-online img-thumbnailimg-thumbnail-primary">
+                        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFup-RDJ8fzXg/profile-displayphoto-shrink_200_200/0/1638466861416?e=1651708800&v=beta&t=OWOsjwHsnb8wchKDBUeI07xQLvna6CvcGlkYCNsG-34" alt="" class="img-circle img-online img-thumbnailimg-thumbnail-primary">
                     </div>
                     <div class="sidebar-user-name">
                         <?= session('user_name') ?>
@@ -46,98 +46,74 @@
                     <li>
                         <a href="<?php echo base_url(route_to('dashboard')); ?>">
 
-                            <i class="mdi mdi-cube"></i><span class="title">Dashboard</span>
+                            <i class="mdi mdi-cube"></i><span class="title">Home</span>
 
                         </a>
-                    </li><!-- End Item 1 DASHBOARD -->
-
-
-
-                    <li>
-                        <a href="" class="has-arrow">
-                            <span class="menu-caret"></span>
-                            <i class="mdi mdi-table-edit"></i><span class="title">Cuestionarios</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="<?php echo base_url(route_to('gestionCuestionario')) ?>"><span class="title">Gestion</span></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url(route_to('reposCuestionarios')) ?>"><span class="title">Repositorios / Plantillas</span></a>
-                            </li>
-                        </ul>
-                    </li><!-- End Item 2 CUESTIONARIOS  -->
-
-                    <li>
-                        <a href="" class="has-arrow">
-                            <span class="menu-caret"></span>
-                            <i class="mdi mdi-auto-fix"></i><span class="title">Metodos</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="<?php echo base_url(route_to('gestionMetodos')) ?>"><span class="title">Gestion</span></a>
-                            </li>
-                        </ul>
-                    </li><!-- End Item 3 METODOS  -->
+                    </li><!-- End Item 1 HOME -->
 
                     <li>
                         <a href="" class="has-arrow">
                             <span class="menu-caret"></span>
                             <i class="mdi mdi-account-multiple"></i>
-                            <span class="title">Personas</span>
+                            <span class="title">Empleados</span>
                         </a>
                         <ul>
                             <li>
-                                <a href="<?php echo base_url(route_to('gestionPersonas')) ?>"><span class="title">Gestion</span></a>
+                                <a href="<?php echo base_url(route_to('gestionPersonas')) ?>"><span class="title">Nuevo empleado</span></a>
                             </li>
                         </ul>
-                    </li><!-- End Item 4 PERSONAS - TRABAJADORES  -->
+                    </li><!-- End Item 2 Empleados -->
 
                     <li>
                         <a href="" class="has-arrow">
                             <span class="menu-caret"></span>
                             <i class="mdi mdi-briefcase"></i><span class="title">
 
-                                Empresatitulo
+                                Departamento
 
                             </span>
                         </a>
                         <ul class="">
                             <li>
-                                <a href="<?php echo base_url(route_to('gestionEmpresa')) ?>"><span class="title">Gestion</span></a>
+                                <a href="<?php echo base_url(route_to('gestionEmpresa')) ?>"><span class="title">Ver departamentos</span></a>
                             </li>
                         </ul>
-                    </li><!-- End Item 5 EMPRESAS  -->
-
-                    <li>
-                        <a href="" class="has-arrow">
-                            <span class="menu-caret"></span>
-                            <i class="mdi mdi-presentation"></i><span class="title">Estudios</span>
-                        </a>
                         <ul class="">
                             <li>
-                                <a href="<?php echo base_url(route_to('gestionEstudios')) ?>"><span class="title">Gestion</span></a>
+                                <a href="<?php echo base_url(route_to('gestionEmpresa')) ?>"><span class="title">Nuevo departamento</span></a>
                             </li>
                         </ul>
-                    </li><!-- End Item 6 ESTUDIOS  -->
+                    </li><!-- End Item 3 DEPARTAMENTOS  -->
 
                     <li>
                         <a href="" class="has-arrow">
                             <span class="menu-caret"></span>
-                            <i class="mdi mdi-file-document"></i><span class="title">Biblioteca</span>
+                            <i class="mdi mdi-table-edit"></i><span class="title">Vacaciones</span>
                         </a>
                         <ul>
                             <li>
-                                <a role="button" type="submit" href="<?php echo base_url(route_to('videos')) ?>"><span class="title">Videos</span></a>
+                                <a href="<?php echo base_url(route_to('gestionCuestionario')) ?>"><span class="title">Gestion vacaciones</span></a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url(route_to('documentacion')) ?>"><span class="title">Documentacion</span></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url(route_to('manuales')) ?>"><span class="title">Manuales</span></a>
+                                <a href="<?php echo base_url(route_to('reposCuestionarios')) ?>"><span class="title">Calendario</span></a>
                             </li>
                         </ul>
-                    </li><!-- End Item 7 BIBLIOTECA  -->
+                    </li><!-- End Item 4 VACACIONES  -->
+
+                    <li>
+                        <a href="" class="has-arrow">
+                            <span class="menu-caret"></span>
+                            <i class="mdi mdi-file-document"></i><span class="title">Documentos</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a role="button" type="submit" href="<?php echo base_url(route_to('videos')) ?>"><span class="title">Nómina</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url(route_to('documentacion')) ?>"><span class="title">Vacaciones</span></a>
+                            </li>
+                        </ul>
+                    </li><!-- End Item 5 DOCUMENTOS  -->
 
                     <li>
                         <a href="" class="has-arrow">
@@ -154,21 +130,8 @@
                                 <a href="<?php echo base_url(route_to('Config-Roles')) ?>"><span class="title">Roles / Permisos</span></a>
                             </li>
 
-
-                            <li>
-                                <a href="<?php echo base_url(route_to('Config-Types')) ?>" class="has-arrow">
-                                    <span class="title">Estudio / Cuestionarios</span>
-                                </a>
-                            </li><!-- End Item 6 ESTUDIOS  -->
-
-                            <li>
-                                <a href="<?php echo base_url(route_to('Config-preguntas')) ?>">
-                                    <span class="title">Preguntas</span>
-                                </a>
-                            </li>
-
                         </ul>
-                    </li><!-- End Item 8 CONFIGURACION  -->
+                    </li><!-- End Item 6 CONFIGURACION  -->
 
                 </ul>
             </div>
