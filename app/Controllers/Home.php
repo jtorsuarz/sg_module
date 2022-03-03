@@ -10,6 +10,6 @@ class Home extends BaseController
     }
     public function prueba()
     {
-        return view('welcome_message');
+        return view('pep');
     }
 }
