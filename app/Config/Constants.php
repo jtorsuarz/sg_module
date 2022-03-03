@@ -85,7 +85,7 @@ defined('ENVIRONMENT') || define('ENVIRONMENT', 'development');
 /** VARIABLES DE ENTORNO */
 switch(ENVIRONMENT) {
     case 'development':
-		define("BASE_URL", "https://localhost/IMF/sg_module/public/");
+		define("BASE_URL", "https://localhost/sg_module/public/");
         define("DB_HOST","localhost");
         define("DB_USER","root");
         define("DB_PASS","");
