@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('indexAction', 'Home::indexaction');
 
+$routes->get('/prueba', 'Home::prueba');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

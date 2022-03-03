@@ -84,7 +84,11 @@ defined('ENVIRONMENT') || define('ENVIRONMENT', 'development');
 /** VARIABLES DE ENTORNO */
 switch(ENVIRONMENT) {
     case 'development':
+<<<<<<< Updated upstream
 		define("BASE_URL", "https://localhost/SG_MODULE/public");
+=======
+		define("BASE_URL", "https://localhost/sg_module/public/");
+>>>>>>> Stashed changes
         define("DB_HOST","localhost");
         define("DB_USER","root");
         define("DB_PASS","");
