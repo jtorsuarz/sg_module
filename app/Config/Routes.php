@@ -34,7 +34,17 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('pruebaOne', 'Home::prueba');
+$routes->get('login', 'Login::index');
+$routes->post('loggers', 'Login::loggers', ['as' => 'Signin']);
 
+
+// ? AccionesMk / metodo 
+$routes->group('/',['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
+
+	$routes->get('admin', 'Login::admin', ['as' => 'admin']);
+
+
+});
 /*
  * --------------------------------------------------------------------
  * Additional Routing
