@@ -36,12 +36,28 @@ class Empleado extends Migration
                 'type'           => 'DATE',
                 'null'           => true,
             ],
-            'id_horario'          => [
+            'id_permiso'          => [
                 'type'           => 'INT',
                 'constraint'     => '12',
                 'unsigned'       => true,
                 'null'           => true,
-            ]
+            ],
+            'salario_bruto'          => [
+                'type'           => 'INT',
+                'constraint'     => '12',
+                'unsigned'       => true,
+                'null'           => true,
+            ],
+            'fehca_inicio_vacaciones'          => [
+                'type'           => 'DATE',
+                'unsigned'       => true,
+                'null'           => true,
+            ],
+            'fehca_fin_vacaciones'          => [
+                'type'           => 'DATE',
+                'unsigned'       => true,
+                'null'           => true,
+            ],
         ]);
         $this->forge->addKey('id_empleado', true);
         $this->forge->createTable('empleados');
