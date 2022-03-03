@@ -24,9 +24,9 @@
             <i class="mdi mdi-menu"></i>
         </button>
         <a class="navbar-brand" href="/">
-            <h8 class="navbar-brand-text">Frontraining
+            <h8 class="navbar-brand-text">ADMINISTRADOR
                 <span style="font-size: 60%; padding-left: 20px">
-                        Version Coach 1.0
+                        Rubén García Barco
                     </span>
             </h8>
         </a>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="navbar-header navbar-always-float navbar-right" style="margin-right: -150px">
-        <img class="" src="<?php echo base_url() . '/assets/img/' ?>snntech.png" height="60">
+        <img class="" src="<?php echo base_url() . '/assets/img/' ?>logoIMF.png" height="60">
     </div>
 
 </nav>
