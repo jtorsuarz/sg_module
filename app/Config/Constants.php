@@ -78,17 +78,14 @@ defined('EXIT_DATABASE')       || define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      || define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
+
 //defined('ENVIRONMENT') || define('ENVIRONMENT', 'production');
 defined('ENVIRONMENT') || define('ENVIRONMENT', 'development');
 
 /** VARIABLES DE ENTORNO */
 switch(ENVIRONMENT) {
     case 'development':
-<<<<<<< Updated upstream
-		define("BASE_URL", "https://localhost/SG_MODULE/public");
-=======
-		define("BASE_URL", "https://localhost/sg_module/public/");
->>>>>>> Stashed changes
+		define("BASE_URL", "https://localhost/IMF/sg_module/public/");
         define("DB_HOST","localhost");
         define("DB_USER","root");
         define("DB_PASS","");
