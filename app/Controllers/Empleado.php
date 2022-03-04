@@ -13,4 +13,9 @@ class Empleado extends BaseController
 		$model->empleados_ajax();
 
 	}
+    public function agregarEmpleadosView() {
+
+        return view('Empleado\NuevoEmpleado');
+
+    }
 }
