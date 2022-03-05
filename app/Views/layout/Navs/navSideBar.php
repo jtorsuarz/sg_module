@@ -80,7 +80,7 @@
                         </ul>
                         <ul class="">
                             <li>
-                                <a href="<?php echo base_url() ?>/Departamento/nuevo"><span class="title">Nuevo departamento</span></a>
+                                <a href="<?php echo base_url() ?>/Departamento/nuevoDepartamentoView"><span class="title">Nuevo departamento</span></a>
                             </li>
                         </ul>
                     </li><!-- End Item 3 DEPARTAMENTOS  -->
