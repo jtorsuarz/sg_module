@@ -14,14 +14,13 @@
                         <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFup-RDJ8fzXg/profile-displayphoto-shrink_200_200/0/1638466861416?e=1651708800&v=beta&t=OWOsjwHsnb8wchKDBUeI07xQLvna6CvcGlkYCNsG-34" alt="" class="img-circle img-online img-thumbnailimg-thumbnail-primary">
                     </div>
                     <div class="sidebar-user-name">
-                        <?= session('user_name') ?>
+                        <!-- session('user_name')  -->
+                        Rubén García
                         <span class="sidebar-user-expand"><i class="fa fa-caret-down"></i></span>
                         <span class="text-small sidebar-user-email">
                             <?= session('user_email') ?>
-
                         </span>
                     </div>
-
                 </a>
                 <div class="sidebar-highlight collapse" id="sidebar-highlight">
 
@@ -44,7 +43,7 @@
 
 
                     <li>
-                        <a href="<?php echo base_url(route_to('dashboard')); ?>">
+                        <a href="<?php echo base_url(route_to('admin')); ?>">
 
                             <i class="mdi mdi-cube"></i><span class="title">Home</span>
 

@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Controllers;
+use App\Entities\EmpleadoEntity;
 
 class Empleado extends BaseController
 {
+    
     public function getListEmpleados()
     {
         $model = Model('Empleado');
@@ -19,11 +21,53 @@ class Empleado extends BaseController
 
     }
 
-    public function modificarEmpleadosView()
+    public function insert_Empleado()
+    {
+       
+        if($this->request->getPost() != null){
+
+            $model = Model('Empleado');
+
+            $empleado = $this->request->getPost();
+            $model->insert_Empleado($empleado);
+        }
+    }
+
+    public function delete_Empleado(){
+
+        if($this->request->getPost() != null){
+
+            $model = Model('Empleado');
+
+            $empleado = $this->request->getPost();
+            $model->delete_Empleado($empleado['id']);
+        }
+    }
+
+    public function modificarEmpleado($id)
     {
 
-        return view('Empleado\ModificarEmpleado');
+        $model = Model('Empleado');
 
+        $empleado = $this->request->getPost();
+        $empleadoParaModificar = $model->find($id);
+
+        return view('Empleado\ModificarEmpleado', compact("empleadoParaModificar"));
+    }
+
+    public function modificarEmpleadoDB()
+    {
+       
+        if($this->request->getPost() != null){
+
+            $model = Model('Empleado');
+
+            $empleado = $this->request->getPost();
+
+            $entityEmpleado = new EmpleadoEntity($empleado);
+
+            $model->save($empleado);
+        }
     }
 
     public function mostrarDatosEmpleadosView()
