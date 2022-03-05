@@ -39,10 +39,20 @@ $routes->group('/', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'
 
 	$routes->get('', 'Login::admin', ['as' => 'viewDashboardAdmin']);
 	$routes->get('listEmpleados', 'Empleado::getListEmpleados', ['as' => 'listarEmpleados']);
-	$routes->get('nuevoEmpleadoView', 'Empleado::agregarEmpleadosView', ['as' => 'viewNuevoEmpleado']);
-	$routes->get('modificarEmpleadoView', 'Empleado::modificarEmpleadosView', ['as' => 'viewModificarEmpleado']);
-	$routes->get('mostrarDatosEmpleadoView', 'Empleado::mostrarDatosEmpleadosView', ['as' => 'viewMostrarEmpleado']);
-	$routes->get('CalendarioView', 'Empleado::calendarioTrabajoView', ['as' => 'viewMostrarCalendario']);
+
+    $routes->get('nuevoEmpleadoView', 'Empleado::agregarEmpleadosView', ['as' =>'viewEmpleado']);
+    $routes->get('modificarEmpleado', 'Empleado::modificarEmpleado', ['as' =>'modificarEmpleado']);
+    $routes->get('mostrarDatosEmpleadoView', 'Empleado::mostrarDatosEmpleadosView', ['as' =>'viewMostrarEmpleado']);
+
+    $routes->post('insert_Empleado', 'Empleado::insert_Empleado', ['as' =>'insert_Empleado']);
+    $routes->post('delete_Empleado', 'Empleado::delete_Empleado', ['as' =>'delete_Empleado']);
+
+    // -- INICIO DEPARTAMENTOS --
+
+    // -- INICIO PROYECTOS --
+
+    // -- CALENDARIO --
+    $routes->get('CalendarioView', 'Empleado::calendarioTrabajoView', ['as' =>'viewMostrarCalendario']);
 
 
 	//DEPARTAMENTO
