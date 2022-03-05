@@ -9,11 +9,11 @@ Dashboard
 <div class="page">
     <header class="ribbon">
         <h2>
-            Tables
+            Todos los empleados
         </h2>
         <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li class="active">Tables</li>
+            <li>Home</li>
+            <!-- <li class="active">Tables</li> -->
         </ol>
     </header>
     <div class="page-content">
@@ -21,7 +21,7 @@ Dashboard
             
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2>Data Table</h2>
+                    <h2>Datos</h2>
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
