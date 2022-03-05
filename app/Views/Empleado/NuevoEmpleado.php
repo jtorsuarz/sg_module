@@ -231,7 +231,7 @@ Agregar Empleado
                     console.log(document.getElementById("fecha_nacimiento").value)
                     console.log(document.getElementById("nombre").value)
                     console.log("Succes")
-                    window.location.href = "<?php echo base_url() ?>/admin";
+                    window.location.href = "<?php echo base_url() ?>/";
                 },
                 error: function(data) {
 
