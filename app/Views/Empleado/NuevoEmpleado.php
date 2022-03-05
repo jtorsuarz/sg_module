@@ -228,7 +228,6 @@ Agregar Empleado
                 processData: false,
                 contentType: false,
                 success: function(data) {
-
                     console.log(document.getElementById("fecha_nacimiento").value)
                     console.log(document.getElementById("nombre").value)
                     console.log("Succes")
