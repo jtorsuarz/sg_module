@@ -42,10 +42,22 @@ $routes->post('loggers', 'Login::loggers', ['as' => 'Signin']);
 $routes->group('/',['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
 
 	$routes->get('admin', 'Login::admin', ['as' => 'admin']);
+
+
+    // -- INICIO EMPLEADOS -- 
 	$routes->get('listEmpleados', 'Empleado::getListEmpleados', ['as' => 'listarEmpleados']);
     $routes->get('nuevoEmpleadoView', 'Empleado::agregarEmpleadosView', ['as' =>'viewEmpleado']);
-    $routes->get('modificarEmpleadoView', 'Empleado::modificarEmpleadosView', ['as' =>'viewModificarEmpleado']);
+    $routes->get('modificarEmpleado', 'Empleado::modificarEmpleado', ['as' =>'modificarEmpleado']);
     $routes->get('mostrarDatosEmpleadoView', 'Empleado::mostrarDatosEmpleadosView', ['as' =>'viewMostrarEmpleado']);
+
+    $routes->post('insert_Empleado', 'Empleado::insert_Empleado', ['as' =>'insert_Empleado']);
+    $routes->post('delete_Empleado', 'Empleado::delete_Empleado', ['as' =>'delete_Empleado']);
+
+    // -- INICIO DEPARTAMENTOS --
+
+    // -- INICIO PROYECTOS --
+
+    // -- CALENDARIO --
     $routes->get('CalendarioView', 'Empleado::calendarioTrabajoView', ['as' =>'viewMostrarCalendario']);
 
 });
