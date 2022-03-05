@@ -63,8 +63,8 @@ $routes->group('/', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'
 
 	//PROYECTOS
 	$routes->get('index', 'Proyecto::index', ['as' => 'listaDepartamentoView']);
-	$routes->get('nuevoDepartamento', 'Proyecto::nuevoProyectoView', ['as' => 'nuevoProyectoView']);
-	$routes->get('modificaDepartamento', 'Proyecto::modificaProyectoView', ['as' => 'modificaProyectoView']);
+	$routes->get('nuevoProyectoView', 'Proyecto::nuevoProyectoView', ['as' => 'nuevoProyectoView']);
+	$routes->get('modificaProyectoView', 'Proyecto::modificaProyectoView', ['as' => 'modificaProyectoView']);
 });
 
 /*
