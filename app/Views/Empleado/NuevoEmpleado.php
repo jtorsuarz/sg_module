@@ -124,18 +124,18 @@
             var RegexNombre = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
 
             if (!(RegexNombre.test(nombreInput.value))) {
-                nombreInput.style.backgroundColor = colorError;
+                nombreInput.style.borderColor = colorError;
                 validadoTodo = false;
             } else {
 
-                nombreInput.style.backgroundColor = 'white';
+                nombreInput.style.borderColor = 'white';
             }
             if (!(RegexNombre.test(apellidoInput.value))) {
-                apellidoInput.style.backgroundColor = colorError;
+                apellidoInput.style.borderColor = colorError;
                 validadoTodo = false;
             } else {
 
-                apellidoInput.style.backgroundColor = 'white';
+                apellidoInput.style.borderColor = 'white';
             }
         }
 
@@ -143,11 +143,11 @@
             var dniInput = document.getElementById("dni");
             var RegexDNI = /^[0-9]{8,8}[A-Za-z]$/;
             if (!(RegexDNI.test(dniInput.value))) {
-                dniInput.style.backgroundColor = colorError;
+                dniInput.style.borderColor = colorError;
                 validadoTodo = false;
             } else {
 
-                dniInput.style.backgroundColor = 'white';
+                dniInput.style.borderColor = 'white';
             }
         }
 
@@ -161,22 +161,22 @@
             console.log(fCumple.value);
             console.log(fechaActual);
             if (fCumple.value == '' || new Date(fCumple.value).getDate() >= new Date(fechaActual).getDate()) {
-                fCumple.style.backgroundColor = colorError;
+                fCumple.style.borderColor = colorError;
                 validadoTodo = false;
             } else {
-                fCumple.style.backgroundColor = 'white';
+                fCumple.style.borderColor = 'white';
             }
             if (fInicio.value == '') {
-                fInicio.style.backgroundColor = colorError;
+                fInicio.style.borderColor = colorError;
                 validadoTodo = false;
             } else {
-                fInicio.style.backgroundColor = 'white';
+                fInicio.style.borderColor = 'white';
             }
             if (fFin.value == '') {
-                fFin.style.backgroundColor = colorError;
+                fFin.style.borderColor = colorError;
                 validadoTodo = false;
             } else {
-                fFin.style.backgroundColor = 'white';
+                fFin.style.borderColor = 'white';
             }
 
         }
@@ -184,9 +184,9 @@
         function validarSueldo() {
             var salarioInput = document.getElementById("salario");
             if (salarioInput.value <= 0) {
-                salarioInput.style.backgroundColor = colorError;
+                salarioInput.style.borderColor = colorError;
             } else {
-                salarioInput.style.backgroundColor = 'white';
+                salarioInput.style.borderColor = 'white';
             }
         }
 
