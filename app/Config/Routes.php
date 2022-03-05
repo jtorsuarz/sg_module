@@ -57,8 +57,8 @@ $routes->group('/', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'
 
 	//DEPARTAMENTO
 	$routes->get('index', 'Departamento::index', ['as' => 'DepartamentoView']);
-	$routes->get('nuevoDepartamento', 'Departamento::nuevo', ['as' => 'nuevoDepartamentoView']);
-	$routes->get('modificaDepartamento', 'Departamento::modifica', ['as' => 'modificaDepartamentoView']);
+	$routes->get('nuevoDepartamento', 'Departamento::nuevoDepartamentoView', ['as' => 'nuevoDepartamentoView']);
+	$routes->get('modificaDepartamento', 'Departamento::modificaDepartamentoView', ['as' => 'modificaDepartamentoView']);
 	$routes->get('listaDepartamento', 'Departamento::lista', ['as' => 'listaDepartamentoView']);
 
 	//PROYECTOS
