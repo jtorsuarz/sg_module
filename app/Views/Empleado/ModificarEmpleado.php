@@ -76,6 +76,16 @@
                                 </div>
                             </div>
                             <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <label for="form1-fname">Departamento</label>
+                                    <select type="text" class="form-control" id="departamento">
+                                        <option value="0"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr>
 
                             <button type="button" class="btn btn-primary" onclick="validar()">Enviar</button>
                         </form>
@@ -103,7 +113,6 @@
             validarFechas();
             validarSueldo();
 
-            //console.log(validadoTodo);
             return validadoTodo;
         }
 
@@ -182,7 +191,7 @@
 
 
         //esto os deberia servir para usar esta funcion al principio y se carguen vuestros datos del empleado para poder modificarlo
-        function ponerDatos(nombre, apellidos, dni, fecha_nacimiento, fecha_inicio_vacaciones, fecha_fin_vacaciones, idPermiso, salarioBruto) {
+        function ponerDatos(nombre, apellidos, dni, fecha_nacimiento, fecha_inicio_vacaciones, fecha_fin_vacaciones, idPermiso, salarioBruto, idDepartamento) {
             var nombreInput = document.getElementById("nombre");
             var apellidoInput = document.getElementById("apellidos");
             var dniInput = document.getElementById("dni");
@@ -191,6 +200,7 @@
             var fFin = document.getElementById("fecha_fin_vacaciones");
             var salarioInput = document.getElementById("salario");
             var permisosInput = document.getElementById("permisos");
+            var departamentoInput = document.getElementById("departamento");
 
             nombreInput.value = nombre;
             apellidoInput.value = apellidos;
@@ -200,6 +210,7 @@
             fFin.value = fecha_fin_vacaciones;
             salarioInput.value = salarioBruto;
             permisosInput.value = idPermiso;
+            departamentoInput.value = idDepartamento;
 
 
         }
