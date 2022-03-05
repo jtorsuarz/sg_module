@@ -18,8 +18,8 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
-$routes->setDefaultMethod('index');
+$routes->setDefaultController('Login');
+$routes->setDefaultMethod('admin');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
@@ -32,19 +32,13 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('pruebaOne', 'Home::prueba');
-$routes->get('login', 'Login::index');
 $routes->post('loggers', 'Login::loggers', ['as' => 'Signin']);
 
 
 // ? AccionesMk / metodo 
 $routes->group('/',['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
 
-	$routes->get('admin', 'Login::admin', ['as' => 'admin']);
-
-
-    // -- INICIO EMPLEADOS -- 
+	$routes->get('', 'Login::admin', ['as' => 'viewDashboardAdmin']);
 	$routes->get('listEmpleados', 'Empleado::getListEmpleados', ['as' => 'listarEmpleados']);
     $routes->get('nuevoEmpleadoView', 'Empleado::agregarEmpleadosView', ['as' =>'viewEmpleado']);
     $routes->get('modificarEmpleado', 'Empleado::modificarEmpleado', ['as' =>'modificarEmpleado']);
@@ -59,6 +53,19 @@ $routes->group('/',['filter' => 'authGuard'], ['namespace' => 'App\Controllers']
 
     // -- CALENDARIO --
     $routes->get('CalendarioView', 'Empleado::calendarioTrabajoView', ['as' =>'viewMostrarCalendario']);
+
+	//DEPARTAMENTO
+
+	$routes->get('index', 'Departamento::index', ['as' => 'DepartamentoView']);
+	$routes->get('nuevoDepartamento', 'Departamento::nuevo', ['as' => 'nuevoDepartamentoView']);
+	$routes->get('modificaDepartamento', 'Departamento::modifica', ['as' => 'modificaDepartamentoView']);
+	$routes->get('listaDepartamento', 'Departamento::lista', ['as' => 'listaDepartamentoView']);
+
+	//PROYECTOS
+
+	$routes->get('index', 'Proyecto::index', ['as' => 'listaDepartamentoView']);
+	$routes->get('nuevoDepartamento', 'Proyecto::nuevo', ['as' => 'nuevoProyectoView']);
+	$routes->get('modificaDepartamento', 'Proyecto::modifica', ['as' => 'modificaProyectoView']);
 
 });
 /*

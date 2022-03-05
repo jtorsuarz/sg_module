@@ -24,7 +24,7 @@ class Login extends BaseController
 			session()->set([
 				'is_logged' => true
 			]);
-			return redirect()->to(base_url('admin'));
+			return redirect()->to(base_url('dashboard_admin'));
 
 		}else{
 			return redirect()->to(base_url('login'));
@@ -35,7 +35,7 @@ class Login extends BaseController
 
 	public function admin()
 	{
-		return view('home_admin');
+		return view('dashboard_admin');
 	}
 
 }

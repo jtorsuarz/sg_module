@@ -113,7 +113,6 @@ Agregar Empleado
 <script src="<?php echo base_url() . '/assets/' ?>vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
 <script>
-
     var validadoTodo;
     var colorError = '#ff5a81';
 
@@ -137,30 +136,32 @@ Agregar Empleado
         var RegexNombre = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
 
         if (!(RegexNombre.test(nombreInput.value))) {
-            nombreInput.style.backgroundColor = colorError;
+            nombreInput.style.borderColor = colorError;
             validadoTodo = false;
         } else {
 
-            nombreInput.style.backgroundColor = 'white';
+            nombreInput.style.borderColor = 'white';
         }
         if (!(RegexNombre.test(apellidoInput.value))) {
-            apellidoInput.style.backgroundColor = colorError;
+            apellidoInput.style.borderColor = colorError;
             validadoTodo = false;
         } else {
 
-            apellidoInput.style.backgroundColor = 'white';
+            apellidoInput.style.borderColor = 'white';
         }
-    }
 
-    function validarDNI() {
-        var dniInput = document.getElementById("dni");
-        var RegexDNI = /^[0-9]{8,8}[A-Za-z]$/;
-        if (!(RegexDNI.test(dniInput.value))) {
-            dniInput.style.backgroundColor = colorError;
-            validadoTodo = false;
-        } else {
 
-            dniInput.style.backgroundColor = 'white';
+
+        function validarDNI() {
+            var dniInput = document.getElementById("dni");
+            var RegexDNI = /^[0-9]{8,8}[A-Za-z]$/;
+            if (!(RegexDNI.test(dniInput.value))) {
+                dniInput.style.borderColor = colorError;
+                validadoTodo = false;
+            } else {
+
+                dniInput.style.borderColor = 'white';
+            }
         }
     }
 
@@ -192,69 +193,65 @@ Agregar Empleado
             fFin.style.backgroundColor = 'white';
         }
 
-    }
+        function validarFechas() {
+            var fCumple = document.getElementById("fecha_nacimiento");
+            var fInicio = document.getElementById("fecha_inicio_vacaciones");
+            var fFin = document.getElementById("fecha_fin_vacaciones");
+            var t = new Date();
+            var fechaActual = new Date(t.getFullYear(), t.getMonth(), t.getDate());
+            console.log(fCumple.value);
+            console.log(fechaActual);
+            if (fCumple.value == '' || new Date(fCumple.value).getDate() >= new Date(fechaActual).getDate()) {
+                fCumple.style.borderColor = colorError;
+                validadoTodo = false;
+            } else {
+                fCumple.style.borderColor = 'white';
+            }
+            if (fInicio.value == '') {
+                fInicio.style.borderColor = colorError;
+                validadoTodo = false;
+            } else {
+                fInicio.style.borderColor = 'white';
+            }
+            if (fFin.value == '') {
+                fFin.style.borderColor = colorError;
+                validadoTodo = false;
+            } else {
+                fFin.style.borderColor = 'white';
+            }
 
-    function validarSueldo() {
-        var salarioInput = document.getElementById("salario");
-        if (salarioInput.value <= 0) {
-            salarioInput.style.backgroundColor = colorError;
-        } else {
-            salarioInput.style.backgroundColor = 'white';
-        }
-    }
-
-
-
-    $("#botonEnviar").on("click", function() {
-
-        if (validar()) {
-
-            let formData = new FormData();
-
-            formData.append('nombre', $('#nombre').val());
-            formData.append('apellido', $('#apellidos').val());
-            formData.append('dni', $('#dni').val());
-            formData.append('id_permiso', $('#permisos').val());
-            formData.append('fecha_nacimiento', ($('#fecha_nacimiento').val()));
-            formData.append('fehca_inicio_vacaciones', ($('#fecha_inicio_vacaciones').val()));
-            formData.append('fehca_fin_vacaciones', ($('#fecha_fin_vacaciones').val()));
-            formData.append('salario_bruto', $('#salario').val());
-
-            $.ajax({
-
-                url: "<?php echo base_url() ?>/Empleado/insert_Empleado",
-                type: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(data) {
-
-                    console.log(document.getElementById("fecha_nacimiento").value)
-                    console.log(document.getElementById("nombre").value)
-                    console.log("Succes")
-                    window.location.href = "<?php echo base_url() ?>/admin";
-                },
-                error: function(data) {
-
-                    Alert.error("Error")
+            function validarSueldo() {
+                var salarioInput = document.getElementById("salario");
+                if (salarioInput.value <= 0) {
+                    salarioInput.style.backgroundColor = colorError;
+                } else {
+                    salarioInput.style.backgroundColor = 'white';
                 }
-            })
+            }
+
+            function validarSueldo() {
+                var salarioInput = document.getElementById("salario");
+                if (salarioInput.value <= 0) {
+                    salarioInput.style.borderColor = colorError;
+                } else {
+                    salarioInput.style.borderColor = 'white';
+                }
+            }
         }
-    })
 
-    $(function() {
-        $('.datepicker-input').datepicker({
-            format: 'yyyy-mm-dd',
-            orientation: 'bottom',
-            autoclose: true,
+        $(function() {
+            $('.datepicker-input').datepicker({
+                format: 'yyyy-mm-dd',
+                orientation: 'bottom',
+                autoclose: true,
 
-        });
-        $('.datepicker-input-group').datepicker({
-            format: 'yyyy-mm-dd',
-            orientation: 'bottom ',
-            autoclose: true,
-        });
-    })
+            });
+            $('.datepicker-input-group').datepicker({
+                format: 'yyyy-mm-dd',
+                orientation: 'bottom ',
+                autoclose: true,
+            });
+        })
 </script>
 
 <?= $this->endSection() ?>
