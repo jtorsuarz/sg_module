@@ -7,8 +7,7 @@ $routes = Services::routes();
 
 // Load the system's routing file first, so that the app and ENVIRONMENT
 // can override as needed.
-if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
-{
+if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
 	require SYSTEMPATH . 'Config/Routes.php';
 }
 
@@ -36,10 +35,11 @@ $routes->post('loggers', 'Login::loggers', ['as' => 'Signin']);
 
 
 // ? AccionesMk / metodo 
-$routes->group('/',['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
+$routes->group('/', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
 
 	$routes->get('', 'Login::admin', ['as' => 'viewDashboardAdmin']);
 	$routes->get('listEmpleados', 'Empleado::getListEmpleados', ['as' => 'listarEmpleados']);
+
     $routes->get('nuevoEmpleadoView', 'Empleado::agregarEmpleadosView', ['as' =>'viewEmpleado']);
     $routes->get('modificarEmpleado', 'Empleado::modificarEmpleado', ['as' =>'modificarEmpleado']);
     $routes->get('mostrarDatosEmpleadoView', 'Empleado::mostrarDatosEmpleadosView', ['as' =>'viewMostrarEmpleado']);
@@ -54,20 +54,19 @@ $routes->group('/',['filter' => 'authGuard'], ['namespace' => 'App\Controllers']
     // -- CALENDARIO --
     $routes->get('CalendarioView', 'Empleado::calendarioTrabajoView', ['as' =>'viewMostrarCalendario']);
 
-	//DEPARTAMENTO
 
+	//DEPARTAMENTO
 	$routes->get('index', 'Departamento::index', ['as' => 'DepartamentoView']);
 	$routes->get('nuevoDepartamento', 'Departamento::nuevo', ['as' => 'nuevoDepartamentoView']);
 	$routes->get('modificaDepartamento', 'Departamento::modifica', ['as' => 'modificaDepartamentoView']);
 	$routes->get('listaDepartamento', 'Departamento::lista', ['as' => 'listaDepartamentoView']);
 
 	//PROYECTOS
-
 	$routes->get('index', 'Proyecto::index', ['as' => 'listaDepartamentoView']);
-	$routes->get('nuevoDepartamento', 'Proyecto::nuevo', ['as' => 'nuevoProyectoView']);
-	$routes->get('modificaDepartamento', 'Proyecto::modifica', ['as' => 'modificaProyectoView']);
-
+	$routes->get('nuevoDepartamento', 'Proyecto::nuevoProyectoView', ['as' => 'nuevoProyectoView']);
+	$routes->get('modificaDepartamento', 'Proyecto::modificaProyectoView', ['as' => 'modificaProyectoView']);
 });
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
@@ -81,7 +80,6 @@ $routes->group('/',['filter' => 'authGuard'], ['namespace' => 'App\Controllers']
  * You will have access to the $routes object within that file without
  * needing to reload it.
  */
-if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
-{
+if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

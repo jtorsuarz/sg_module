@@ -8,7 +8,7 @@ class Proyecto extends BaseController
 {
 	public function index()
 	{
-		return view('index.php');
+		return view('Proyecto/index');
 	}
 	public function nuevoProyectoView()
 	{
