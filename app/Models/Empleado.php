@@ -35,7 +35,6 @@ class Empleado extends Model
         }
         $data1 = array("data" => ($data));
         echo json_encode($data1);
-
     }
 
     public function insert_Empleado($empleado)
