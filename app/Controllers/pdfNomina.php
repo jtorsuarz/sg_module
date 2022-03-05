@@ -1,6 +1,6 @@
 <?php
 
-use Helper\Utils\FPDF;
+require 'fpdf/fpdf/fpdf.php'
 
 ?>
 
