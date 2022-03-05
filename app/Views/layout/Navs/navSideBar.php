@@ -27,7 +27,7 @@
 
                     <ul class="main-nav">
                         <li>
-                            <a href="<?php echo base_url(route_to("Editar-Persona")); ?>/<?= session()->user_id ?>"><i class="mdi mdi-account-convert"></i> Perfil</a>
+                            <a href="<?php echo base_url(); ?>/<?= session()->user_id ?>"><i class="mdi mdi-account-convert"></i> Perfil</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(route_to('Logout')) ?>"><i class="mdi mdi-logout"></i> Logout</a>
@@ -44,7 +44,7 @@
 
 
                     <li>
-                        <a href="<?php echo base_url(route_to('dashboard')); ?>">
+                        <a href="<?php echo base_url(); ?>">
 
                             <i class="mdi mdi-cube"></i><span class="title">Home</span>
 
@@ -59,7 +59,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="<?php echo base_url(route_to('viewEmpleado')) ?>"><span class="title">Nuevo empleado</span></a>
+                                <a href="<?php echo base_url() ?>/Empleado/agregarEmpleadosView"><span class="title">Nuevo empleado</span></a>
                             </li>
                         </ul>
                     </li><!-- End Item 2 Empleados -->
@@ -75,15 +75,36 @@
                         </a>
                         <ul class="">
                             <li>
-                                <a href="<?php echo base_url(route_to('gestionEmpresa')) ?>"><span class="title">Ver departamentos</span></a>
+                                <a href="<?php echo base_url() ?>/Departamento/index"><span class="title">Ver departamentos</span></a>
                             </li>
                         </ul>
                         <ul class="">
                             <li>
-                                <a href="<?php echo base_url(route_to('gestionEmpresa')) ?>"><span class="title">Nuevo departamento</span></a>
+                                <a href="<?php echo base_url() ?>/Departamento/nuevo"><span class="title">Nuevo departamento</span></a>
                             </li>
                         </ul>
                     </li><!-- End Item 3 DEPARTAMENTOS  -->
+
+                    <li>
+                        <a href="" class="has-arrow">
+                            <span class="menu-caret"></span>
+                            <i class="mdi mdi-earth"></i><span class="title">
+
+                                Proyectos
+
+                            </span>
+                        </a>
+                        <ul class="">
+                            <li>
+                                <a href="<?php echo base_url() ?>/Proyecto/index"><span class="title">Ver Proyectos</span></a>
+                            </li>
+                        </ul>
+                        <ul class="">
+                            <li>
+                                <a href="<?php echo base_url() ?>/Proyecto/nuevoProyectoView"><span class="title">Nuevo Proyectos</span></a>
+                            </li>
+                        </ul>
+                    </li><!-- End Item 4 Proyectos  -->
 
                     <li>
                         <a href="" class="has-arrow">
@@ -92,13 +113,13 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="<?php echo base_url(route_to('gestionCuestionario')) ?>"><span class="title">Gestion vacaciones</span></a>
+                                <a href="<?php echo base_url() ?>"><span class="title">Gestion vacaciones</span></a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url(route_to('reposCuestionarios')) ?>"><span class="title">Calendario</span></a>
+                                <a href="<?php echo base_url() ?>"><span class="title">Calendario</span></a>
                             </li>
                         </ul>
-                    </li><!-- End Item 4 VACACIONES  -->
+                    </li><!-- End Item 5 VACACIONES  -->
 
                     <li>
                         <a href="" class="has-arrow">
@@ -110,10 +131,10 @@
                                 <a role="button" type="submit" href="<?php echo base_url(route_to('videos')) ?>"><span class="title">Nómina</span></a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url(route_to('documentacion')) ?>"><span class="title">Vacaciones</span></a>
+                                <a href="<?php echo base_url() ?>"><span class="title">Vacaciones</span></a>
                             </li>
                         </ul>
-                    </li><!-- End Item 5 DOCUMENTOS  -->
+                    </li><!-- End Item 6 DOCUMENTOS  -->
 
                     <li>
                         <a href="" class="has-arrow">
@@ -122,16 +143,16 @@
                         </a>
                         <ul>
                             <!-- <li>
-                                <a href="<?php echo base_url(route_to('Config-Empresa')) ?>"><span class="title">
+                                <a href="<?php echo base_url() ?>"><span class="title">
                                     </span></a>
                             </li> -->
 
                             <li>
-                                <a href="<?php echo base_url(route_to('Config-Roles')) ?>"><span class="title">Roles / Permisos</span></a>
+                                <a href="<?php echo base_url() ?>"><span class="title">Roles / Permisos</span></a>
                             </li>
 
                         </ul>
-                    </li><!-- End Item 6 CONFIGURACION  -->
+                    </li><!-- End Item 7 CONFIGURACION  -->
 
                 </ul>
             </div>
@@ -145,7 +166,7 @@
         <div class="horizontal-nav">
             <ul class="horizontal-nav horizontal-nav-1">
                 <li>
-                    <a href="<?php echo base_url(route_to('Logout')) ?>"><i class="mdi mdi-logout"></i></a>
+                    <a href="<?php echo base_url() ?>"><i class="mdi mdi-logout"></i></a>
                 </li>
             </ul>
         </div>

@@ -8,7 +8,7 @@ class Departamento extends BaseController
 {
 	public function index()
 	{
-		return view('index');
+		return view('Departamento/index');
 	}
 	public function nuevoDepartamentoView()
 	{
