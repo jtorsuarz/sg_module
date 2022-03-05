@@ -18,8 +18,7 @@ Dashboard
     </header>
     <div class="page-content">
         <div class="container-fluid">
-
-
+            
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2>Data Table</h2>
@@ -127,8 +126,8 @@ Dashboard
                         "data": "id_empleado",
                         render: function(data) {
                             var btns = "";
-                            btns += "<a href='<?php echo base_url() ?>/Empleado/modificarEmpleado/"+data+"' class='<?= btn_editar_class ?>' style='margin-right: 10px' ><?= btn_editar ?></a>";
-                            btns += "<button class='<?= btn_elimnar_class ?>' value='" + data + "' onclick='trash(" + data + ")' class='btn btn-info'><?= btn_elimnar ?></button>"
+                            btns += "<a href='<?php echo base_url() ?>/Empleado/modificarEmpleado/"+data+"' class='<?= btn_editar_class ?>' style='margin-right: 20px; width: 160px' ><?= btn_editar ?></a>";
+                            btns += "<button class='<?= btn_elimnar_class ?>' value='" + data + "' onclick='trash(" + data + ")' class='btn btn-info' style='width: 160px ' ><?= btn_elimnar ?></button>"
                             return btns
                         }
                     },
