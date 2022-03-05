@@ -44,6 +44,19 @@ $routes->group('/',['filter' => 'authGuard'], ['namespace' => 'App\Controllers']
 	$routes->get('admin', 'Login::admin', ['as' => 'admin']);
 	$routes->get('listEmpleados', 'Empleado::getListEmpleados', ['as' => 'listarEmpleados']);
 
+	//DEPARTAMENTO
+
+	$routes->get('index', 'Departamento::index', ['as' => 'DepartamentoView']);
+	$routes->get('nuevoDepartamento', 'Departamento::nuevo', ['as' => 'nuevoDepartamentoView']);
+	$routes->get('modificaDepartamento', 'Departamento::modifica', ['as' => 'modificaDepartamentoView']);
+	$routes->get('listaDepartamento', 'Departamento::lista', ['as' => 'listaDepartamentoView']);
+
+	//PROYECTOS
+
+	$routes->get('index', 'Proyecto::index', ['as' => 'listaDepartamentoView']);
+	$routes->get('nuevoDepartamento', 'Proyecto::nuevo', ['as' => 'nuevoProyectoView']);
+	$routes->get('modificaDepartamento', 'Proyecto::modifica', ['as' => 'modificaProyectoView']);
+
 });
 /*
  * --------------------------------------------------------------------
