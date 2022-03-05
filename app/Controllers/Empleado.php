@@ -18,4 +18,9 @@ class Empleado extends BaseController
         return view('Empleado\NuevoEmpleado');
 
     }
+    public function modificarEmpleadosView() {
+
+    return view('Empleado\ModificarEmpleado');
+
+}
 }

@@ -1,7 +1,7 @@
 <?= $this->extend('Views/layout/main') ?>
 
 <?= $this->section('title') ?>
-    Agregar Empleado
+    Modificar Empleado
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -11,12 +11,12 @@
 
         <header class="ribbon">
             <h2>
-                Agregar Empleado
+                Modificar Empleado
             </h2>
 
             <ol class="breadcrumb">
                 <li><a href="#">Empleado</a></li>
-                <li class="active">Nuevo Empleado</li>
+                <li class="active">Modificar Empleado</li>
             </ol>
         </header>
 
@@ -24,7 +24,7 @@
             <div class="container-fluid">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h2>Nuevo Empleado</h2>
+                        <h2>Modificar Empleado</h2>
                     </div>
                     <div class="panel-body">
                         <form class="mdform">
@@ -181,5 +181,27 @@
         }
 
 
+        //esto os deberia servir para usar esta funcion al principio y se carguen vuestros datos del empleado para poder modificarlo
+        function ponerDatos(nombre, apellidos, dni, fecha_nacimiento, fecha_inicio_vacaciones, fecha_fin_vacaciones, idPermiso, salarioBruto) {
+            var nombreInput = document.getElementById("nombre");
+            var apellidoInput = document.getElementById("apellidos");
+            var dniInput = document.getElementById("dni");
+            var fCumple = document.getElementById("fecha_nacimiento");
+            var fInicio = document.getElementById("fecha_inicio_vacaciones");
+            var fFin = document.getElementById("fecha_fin_vacaciones");
+            var salarioInput = document.getElementById("salario");
+            var permisosInput = document.getElementById("permisos");
+
+            nombreInput.value = nombre;
+            apellidoInput.value = apellidos;
+            dniInput.value = dni;
+            fCumple.value = fecha_nacimiento;
+            fInicio.value = fecha_inicio_vacaciones;
+            fFin.value = fecha_fin_vacaciones;
+            salarioInput.value = salarioBruto;
+            permisosInput.value = idPermiso;
+
+
+        }
     </script>
 <?= $this->endSection() ?>

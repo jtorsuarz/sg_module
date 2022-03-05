@@ -44,6 +44,7 @@ $routes->group('/',['filter' => 'authGuard'], ['namespace' => 'App\Controllers']
 	$routes->get('admin', 'Login::admin', ['as' => 'admin']);
 	$routes->get('listEmpleados', 'Empleado::getListEmpleados', ['as' => 'listarEmpleados']);
     $routes->get('nuevoEmpleadoView', 'Empleado::agregarEmpleadosView', ['as' =>'viewEmpleado']);
+    $routes->get('modificarEmpleadoView', 'Empleado::modificarEmpleadosView', ['as' =>'viewModificarEmpleado']);
 
 });
 /*
