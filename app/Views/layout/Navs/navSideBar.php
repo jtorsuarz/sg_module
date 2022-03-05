@@ -112,11 +112,11 @@
                             <i class="mdi mdi-table-edit"></i><span class="title">Vacaciones</span>
                         </a>
                         <ul>
-                            <!-- <li>
-                                <a href="<?php echo base_url() ?>"><span class="title">Gestion vacaciones</span></a>
-                            </li> -->
                             <li>
-                                <a href="<?php echo base_url() ?>/CalendarioView"><span class="title">Calendario</span></a>
+                                <a href="<?php echo base_url() ?>"><span class="title">Gestion vacaciones</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() ?>"><span class="title">Calendario</span></a>
                             </li>
                         </ul>
                     </li><!-- End Item 5 VACACIONES  -->
@@ -128,7 +128,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a role="button" type="submit" href="<?php echo base_url() ?>/pdfNomina"><span class="title">Nómina</span></a>
+                                <a role="button" type="submit" href="<?php echo base_url(route_to('videos')) ?>"><span class="title">Nómina</span></a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url() ?>"><span class="title">Vacaciones</span></a>
