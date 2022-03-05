@@ -64,7 +64,7 @@
                             <div class="row">
                                 <div class="col-md-6">
 
-                                    <label for="form1-fname">ID Permisos</label>
+                                    <label for="form1-fname">Permisos</label>
                                     <select type="text" class="form-control" id="permisos">
                                         <option value="0">Permiso Administrador</option>
                                         <option value="1">Permiso Usuario</option>
@@ -77,7 +77,7 @@
                             </div>
                             <hr>
 
-                            <button type="button" class="btn btn-primary" onclick="validar()">Submit</button>
+                            <button type="button" class="btn btn-primary" onclick="validar()">Enviar</button>
                         </form>
                     </div>
                     <!-- /.panel-body -->
