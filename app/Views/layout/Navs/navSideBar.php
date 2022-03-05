@@ -59,7 +59,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="<?php echo base_url(route_to('gestionPersonas')) ?>"><span class="title">Nuevo empleado</span></a>
+                                <a href="<?php echo base_url(route_to('viewEmpleado')) ?>"><span class="title">Nuevo empleado</span></a>
                             </li>
                         </ul>
                     </li><!-- End Item 2 Empleados -->
