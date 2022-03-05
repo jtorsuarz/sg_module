@@ -11,11 +11,11 @@ Calendario de Trabajo
 <div class="page">
     <header class="ribbon">
         <h2>
-            Calendar
+            Calendario
         </h2>
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
-            <li class="active">Calendar</li>
+            <li class="active">Calendario</li>
         </ol>
     </header>
     <div class="page-content">
@@ -25,18 +25,18 @@ Calendario de Trabajo
                 <div class="col-lg-3">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h2>Draggable Events</h2>
+                            <h2>Nuevo Evento</h2>
                         </div>
                         <div class="panel-body">
                             <div class="demo-section">
                                 <div class="demo-details">
-                                    Drag and Drop these events to the Calendar
+                                    Arrastre un evento al día asignado
                                 </div>
                                 <div class="demo-elements external-events">
-                                    <div class='fc-event'>Allison's Wedding</div>
-                                    <div class='fc-event'>Meeting with CFO</div>
-                                    <div class='fc-event'>Company Day</div>
-                                    <div class='fc-event'>Holiday</div>
+                                    <div class='fc-event'>Dia Libre</div>
+                                    <div class='fc-event'>No laboral</div>
+                                    <div class='fc-event'>Turno de trabajo</div>
+                                    <div class='fc-event'>Vacaciones</div>
                                 </div>
                             </div>
                         </div>
@@ -101,14 +101,14 @@ Calendario de Trabajo
             droppable: true, // this allows things to be dropped onto the calendar
             events: [
                 {
-                    title: 'Allison\'s Birthday',
-                    start: '2017-09-12',
-                    color: '#1E88E5',
+                    title: 'Día Festivo',
+                    start: '2022-03-06',
+                    color: '#787878',
                 },
                 {
-                    title: 'Team Meeting',
-                    start: '2017-09-13',
-                    color: '#1E88E5',
+                    title: 'Día Festivo',
+                    start: '2022-03-13',
+                    color: '#787878',
 
                 }
                 // etc...

@@ -76,6 +76,16 @@
                                 </div>
                             </div>
                             <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <label for="form1-fname">Departamento</label>
+                                    <select type="text" class="form-control" id="departamento">
+                                        <option value="0"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr>
 
                             <button type="button" class="btn btn-primary" onclick="validar()">Enviar</button>
                         </form>

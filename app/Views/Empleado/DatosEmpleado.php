@@ -75,6 +75,17 @@
                                     <input type="number" class="form-control" id="salario" disabled>
                                 </div>
                             </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <label for="form1-fname">Departamento</label>
+                                    <select type="text" class="form-control" id="departamento" disabled>
+                                        <option value="0"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr>
                         </form>
                     </div>
                     <!-- /.panel-body -->
@@ -95,6 +106,7 @@
         var fFin = document.getElementById("fecha_fin_vacaciones");
         var salarioInput = document.getElementById("salario");
         var permisosInput = document.getElementById("permisos");
+        var departamentoInput = document.getElementById("departamento");
 
         //insertar en vez de "" la variable correspondiente a lo que vosotros tengais deberia funcionar
         nombreInput.value = "nombre";
@@ -105,6 +117,7 @@
         fFin.value = "01/01/2002";
         salarioInput.value = "122";
         permisosInput.value = option.value("1");
+        departamentoInput.value = option.value("1");
 
     </script>
 <?= $this->endSection() ?>
