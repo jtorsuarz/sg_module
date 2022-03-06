@@ -18,4 +18,21 @@ class Proyecto extends BaseController
 	{
 		return view('Proyecto/modifica');
 	}
+	public function getListaProyectos(){
+
+		$model = Model('Proyecto');
+
+        $model->proyecto_ajax();
+	}
+
+	public function delete_Proyecto(){
+
+        if($this->request->getPost() != null){
+
+            $model = Model('Proyecto');
+
+            $proyecto = $this->request->getPost();
+            $model->delete_Proyecto($proyecto['id']);
+        }
+    }
 }

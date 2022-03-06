@@ -41,4 +41,10 @@ class Departamento extends Model
         echo json_encode($data1);
     }
 
+    public function delete_Departamento($id)
+    {
+
+        $this->delete($id);
+    }
+    
 }
