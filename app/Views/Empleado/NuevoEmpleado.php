@@ -80,7 +80,7 @@ Agregar Empleado
                             <div class="col-md-6">
                                 <label for="form1-lname">Fecha Nacimiento</label>
                                 <div class="input-group datepicker-input-group date">
-                                    <input  class="form-control" id="fecha_nacimiento">
+                                    <input class="form-control" id="fecha_nacimiento">
                                     <span class="input-group-addon" id="date-perso"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
@@ -234,6 +234,7 @@ Agregar Empleado
 
             formData.append('nombre', $('#nombre').val());
             formData.append('apellido', $('#apellidos').val());
+            formData.append('password', $('#password').val());
             formData.append('dni', $('#dni').val());
             formData.append('id_permiso', $('#permisos').val());
             formData.append('fecha_nacimiento', ($('#fecha_nacimiento').val()));
@@ -273,6 +274,29 @@ Agregar Empleado
             format: 'yyyy-mm-dd',
             orientation: 'bottom ',
             autoclose: true,
+        });
+    })
+
+    // FUNCION QUE DEVUELVE EMPRESAS EN SELECT PARA FILTRAR
+    $(function() {
+        $.ajax({
+            url: "<?= base_url() ?>/Departamento/getListDepartamento_select",
+            type: "GET",
+            success: function(data) {
+                var json = JSON.parse(data);
+                if (json.length === 0) {
+                    $("#departamento").html('');
+                    $("#departamento").append('<option  selected disable>No hay Departamentos registradas</option>');
+                    $('#departamento').selectpicker('refresh');
+
+                } else {
+                    $("#departamento").html('');
+                    $.each(json, function(i, item) {
+                        $("#departamento").append('<option value="' + item.id_depart + '">' + item.nombre + '</option>');
+                    });
+                    $('#departamento').selectpicker('refresh');
+                }
+            }
         });
     })
 </script>

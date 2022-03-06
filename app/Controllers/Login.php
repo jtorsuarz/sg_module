@@ -14,24 +14,60 @@ class Login extends BaseController
 	public function loggers()
 	{
 
-		$data = [
-			'username' => $this->request->getPost('usuario'),
-			'password' => $this->request->getPost('password'),
-		];
-		
+        if (!$this->validate([
+            'usuario' => 'required',
+            'password' => 'required'
+        ],
+        [
+            'usuario' => [
 
-		if($data['username'] == 'rrhh' && $data['password'] == 'rrhh'){
-			session()->set([
-				'is_logged' => true
-			]);
-			return redirect()->to(base_url('dashboard_admin'));
+                'required' => 'El correo es requerido',
 
-		}else{
-			return redirect()->to(base_url('login'));
-		}
+            ],
+            'password' => [
+                'required' => 'La contraseña no es válida'
+            ]
 
+        ]
+        )) {
+            return redirect()->back()->with('errors', $this->validator->getErrors())
+            ->withInput();
+        }
+
+		$userModel = Model('Usuario');
+
+		$usuario = trim($this->request->getVar('usuario'));
+        $password = trim($this->request->getVar('password'));
+
+        if (!$user = $userModel->getUserBy('usuario', $usuario)) {
+
+            return redirect()->back()->with('msg', [
+                'type' => 'error',
+                'content' => 'El usuario no es válido',
+            ]);
+        }
+
+        if (!password_verify($password, $user->password)) {
+
+            return redirect()->back()->with('msg', [
+                'type' => 'error',
+                'content' => 'La contraseña no es válida',
+            ]);
+        }
+
+		$userModel->saveSession($user);
+
+        return redirect()->route('viewDashboardAdmin');
 		
 	}
+    
+    public function logout(){
+
+        session()->destroy();
+        return redirect()->route('Login');
+
+    }
+
 
 	public function admin()
 	{

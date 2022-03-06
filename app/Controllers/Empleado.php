@@ -64,9 +64,8 @@ class Empleado extends BaseController
 
             $empleado = $this->request->getPost();
 
-            $entityEmpleado = new EmpleadoEntity($empleado);
+            $model->insert_Empleado($empleado);
 
-            $model->save($empleado);
         }
     }
 

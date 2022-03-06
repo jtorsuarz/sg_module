@@ -22,7 +22,6 @@ class DepartamentoHasProyecto extends Migration
                 'null'           => false,
             ]
         ]);
-
         $this->forge->addForeignKey('id_departamento', 'departamentos', 'id_depart', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('id_proyecto', 'proyectos', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('departamento_has_proyectos');

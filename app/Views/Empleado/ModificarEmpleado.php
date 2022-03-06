@@ -259,6 +259,7 @@ Modificar Empleado
 
             formData.append('id_empleado', $('#input_id_empleado').val());
             formData.append('nombre', $('#nombre').val());
+            formData.append('password', $('#password').val());
             formData.append('apellido', $('#apellidos').val());
             formData.append('dni', $('#dni').val());
             formData.append('id_permiso', $('#permisos').val());
@@ -276,14 +277,12 @@ Modificar Empleado
                 contentType: false,
                 success: function(data) {
 
-                    console.log(document.getElementById("fecha_nacimiento").value)
-                    console.log(document.getElementById("nombre").value)
                     console.log("Succes")
-                    window.location.href = "<?php echo base_url() ?>/";
+                    //window.location.href = "<?php echo base_url() ?>/";
                 },
                 error: function(data) {
 
-                    Alert.error("Error")
+                    alert("Errore")
                 }
             })
         }
