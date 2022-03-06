@@ -14,7 +14,7 @@
         loadersign.style.display = "none";
     }
 </script>
-<nav class="navbar navbar-blue navbar-fixed-top topbar" style="" id="topbar">
+<nav class="navbar navbar-blue navbar-fixed-top topbar" id="topbar">
 
     <div class="navbar-header navbar-always-float navbar-left" style="width: 50.5rem">
         <button class="btn btn-transparent-light navbar-btn navbar-sidebar-toggle  hidden-xs ">
@@ -27,7 +27,7 @@
             <h8 class="navbar-brand-text"><?= session('permiso_name') ?>
                 <span style="font-size: 60%; padding-left: 20px">
                         <!-- Rubén García Barco -->
-                    <?php echo $_SESSION['username'] ?>
+                        <?= session('username') ?>
                     </span>
             </h8>
         </a>
