@@ -103,7 +103,7 @@ Departamento
                 "ajax": "<?= base_url() ?>/Proyecto/getListaProyectos/",
                 "type": "GET",
                 order: [
-                    [1, 'asc']
+                    [0, 'asc']
                 ],
                 "columns": [{
                         "data": "id"

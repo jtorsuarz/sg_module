@@ -50,7 +50,7 @@ Agregar Empleado
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="form1-fname">DNI</label>
-                                <input value="514945264J" type="text" class="form-control" id="dni">
+                                <input value="51495264J" type="text" class="form-control" id="dni">
                             </div>
                             <div class="col-md-6">
                                 <label for="form1-fname">Password</label>
@@ -80,7 +80,7 @@ Agregar Empleado
                             <div class="col-md-6">
                                 <label for="form1-lname">Fecha Nacimiento</label>
                                 <div class="input-group datepicker-input-group date">
-                                    <input  class="form-control" id="fecha_nacimiento">
+                                    <input value="1999-09-10" class="form-control" id="fecha_nacimiento">
                                     <span class="input-group-addon" id="date-perso"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@ Agregar Empleado
         var fechaActual = new Date(t.getFullYear(), t.getMonth(), t.getDate());
         console.log(fCumple.value);
         console.log(fechaActual);
-        if (fCumple.value == '' || new Date(fCumple.value).getDate() >= new Date(fechaActual).getDate()) {
+        if (fCumple.value == '') {
             fCumple.style.borderColor = colorError;
             validadoTodo = false;
         } else {
@@ -224,8 +224,6 @@ Agregar Empleado
         }
     }
 
-
-
     $("#botonEnviar").on("click", function() {
 
         if (validar()) {
@@ -249,14 +247,12 @@ Agregar Empleado
                 processData: false,
                 contentType: false,
                 success: function(data) {
-                    console.log(document.getElementById("fecha_nacimiento").value)
-                    console.log(document.getElementById("nombre").value)
-                    console.log("Succes")
+
                     window.location.href = "<?php echo base_url() ?>/";
                 },
                 error: function(data) {
 
-                    Alert.error("Error")
+                    Alert.error("Error al insertar el empleado")
                 }
             })
         }
