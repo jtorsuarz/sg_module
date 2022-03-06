@@ -17,6 +17,15 @@ Modificar Empleado
             <li><a href="#">Empleado</a></li>
             <li class="active"><?php echo $empleadoParaModificar->nombre ?></li>
         </ol>
+
+        <style>
+            input[type="number"] {
+                -webkit-appearance: textfield !important;
+                margin: 0;
+                -moz-appearance: textfield !important;
+            }
+        </style>
+
     </header>
 
     <div class="page-content">
@@ -47,7 +56,7 @@ Modificar Empleado
                                 <label>Fecha Nacimiento</label>
                                 <div class="input-group datepicker-input-group date">
                                     <input value="<?php echo $empleadoParaModificar->fecha_nacimiento ?>" class="form-control" id="fecha_nacimiento">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
 
@@ -58,7 +67,7 @@ Modificar Empleado
                                 <label>Inicio vacaciones</label>
                                 <div class="input-group datepicker-input-group date">
                                     <input value="<?php echo $empleadoParaModificar->fehca_inicio_vacaciones ?>" class="form-control" id="fecha_inicio_vacaciones">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
 
@@ -66,7 +75,7 @@ Modificar Empleado
                                 <label for="form1-lname">Fin vacaciones</label>
                                 <div class="input-group datepicker-input-group date">
                                     <input value="<?php echo $empleadoParaModificar->fehca_fin_vacaciones ?>" class="form-control" id="fecha_fin_vacaciones">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -264,7 +273,7 @@ Modificar Empleado
                     console.log(document.getElementById("fecha_nacimiento").value)
                     console.log(document.getElementById("nombre").value)
                     console.log("Succes")
-                    window.location.href = "<?php echo base_url() ?>/admin";
+                    window.location.href = "<?php echo base_url() ?>/";
                 },
                 error: function(data) {
 

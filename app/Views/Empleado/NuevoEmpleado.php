@@ -17,6 +17,15 @@ Agregar Empleado
             <li><a href="#">Empleado</a></li>
             <li class="active">Nuevo Empleado</li>
         </ol>
+
+        <style>
+            input[type="number"] {
+                -webkit-appearance: textfield !important;
+                margin: 0;
+                -moz-appearance: textfield !important;
+            }
+        </style>
+
     </header>
 
     <div class="page-content">
@@ -47,7 +56,7 @@ Agregar Empleado
                                 <label>Fecha Nacimiento</label>
                                 <div class="input-group datepicker-input-group date">
                                     <input value="2017-06-01" class="form-control" id="fecha_nacimiento">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
 
@@ -58,7 +67,7 @@ Agregar Empleado
                                 <label>Inicio vacaciones</label>
                                 <div class="input-group datepicker-input-group date">
                                     <input value="2022-05-01" class="form-control" id="fecha_inicio_vacaciones">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
 
@@ -66,7 +75,7 @@ Agregar Empleado
                                 <label for="form1-lname">Fin vacaciones</label>
                                 <div class="input-group datepicker-input-group date">
                                     <input value="2022-06-01" class="form-control" id="fecha_fin_vacaciones">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
                         </div>
