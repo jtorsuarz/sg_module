@@ -24,11 +24,7 @@ Crear proyecto
                 <div class="panel-body">
                     <form class="mdform">
                         <div class="row">
-                            <div class="col-md-6">
-                                <label for="form1-email">Id Proyecto</label>
-                                <input type="text" class="form-control" id="idProyecto">
-                            </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label>Nombre Proyecto</label>
                                 <input type="text" class="form-control" id="nombreProyecto">
                             </div>
@@ -42,7 +38,7 @@ Crear proyecto
                             <div class="col-md-6">
 
                                 <label for="form1-fname">Departamento</label>
-                                <select type="text" class="form-control" id="permisos">
+                                <select type="text" class="form-control" id="departamento">
                                     <option value="0"></option>
                                 </select>
                             </div>
@@ -67,7 +63,7 @@ Crear proyecto
                         <hr>
 
                         <!-- /.row -->
-                        <button type="button" class="btn btn-primary" onclick="validar()">Enviar</button>
+                        <a type="button" class="btn btn-primary" id="botonEnviar">Enviar</a>
 
                     </form>
                 </div>
@@ -108,19 +104,10 @@ Crear proyecto
         function validar() {
             validadoTodo = true;
 
-            var idProyecto = document.getElementById("idProyecto");
             var nombreInput = document.getElementById("nombreProyecto");
             var descripcionInput = document.getElementById("descripcion");
             var fechaInicioInput = document.getElementById("f_Inicio");
             var fechaFinalInput = document.getElementById("f_Final");
-
-
-            if (idProyecto.value == '') {
-                idProyecto.style.borderColor = colorError;
-                validadoTodo = false;
-            } else {
-                idProyecto.style.borderColor = 'white';
-            }
 
             if (nombreInput.value == '') {
                 nombreInput.style.borderColor = colorError;
@@ -153,5 +140,59 @@ Crear proyecto
 
             return validadoTodo;
         }
+
+        $("#botonEnviar").on("click", function() {
+
+            if (validar()) {
+
+                let formData = new FormData();
+
+                formData.append('nombre', $('#nombreProyecto').val());
+                formData.append('descripcion', $('#descripcion').val());
+                formData.append('id_departamento', $('#departamento').val());
+                formData.append('fecha_inicio', $('#f_Inicio').val());
+                formData.append('fecha_fin', $('#f_Final').val());
+
+                $.ajax({
+
+                    url: "<?php echo base_url() ?>/Proyecto/insert_ProyectoDB",
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+
+                        //window.location.href = "<?php echo base_url() ?>/";
+                    },
+                    error: function(data) {
+
+                        alert("Error al insertar el empleado")
+                    }
+                })
+            }
+        })
+
+        // FUNCION QUE DEVUELVE UN SELECT PARA FILTRAR
+        $(function() {
+            $.ajax({
+                url: "<?= base_url() ?>/Departamento/getDepartJSON",
+                type: "GET",
+                success: function(data) {
+                    var json = JSON.parse(data);
+                    if (json.length === 0) {
+                        $("#departamento").html('');
+                        $("#departamento").append('<option  selected disable>No hay Departamentos registradas</option>');
+                        $('#departamento').selectpicker('refresh');
+
+                    } else {
+                        $("#departamento").html('');
+                        $.each(json, function(i, item) {
+                            $("#departamento").append('<option value="' + item.id_depart + '">' + item.nombre + '</option>');
+                        });
+                        $('#departamento').selectpicker('refresh');
+                    }
+                }
+            });
+        })
     </script>
     <?= $this->endSection() ?>

@@ -25,6 +25,7 @@ class Proyecto extends BaseController
         $model->proyecto_ajax();
 	}
 
+	// POST
 	public function delete_Proyecto(){
 
         if($this->request->getPost() != null){
@@ -35,4 +36,17 @@ class Proyecto extends BaseController
             $model->delete_Proyecto($proyecto['id']);
         }
     }
+
+	public function insert_ProyectoDB(){
+		
+		if($this->request->getPost() != null){
+
+			$model = Model('Proyecto');
+
+			$proyecto = $this->request->getPost();
+			$model->insert_Proyecto($proyecto);
+		}
+	}
+	
+
 }

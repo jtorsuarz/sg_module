@@ -13,17 +13,35 @@ class Departamento extends Model
     protected $returnType       = DepartamentoEntity::class;
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_depart','nombre', 'descripcion'];
+    protected $allowedFields    = ['id_depart', 'nombre', 'descripcion'];
 
     // get deppartamento name
-    public function getDepartamentoName($id)
+    public function getDepartamentoName($idEmpleado)
     {
-        $data = $this->select('nombre')
-            ->where('id_depart', $id)
-            ->get()
-            ->getRow();
 
-        return $data->nombre;
+        $name = "No asignado";
+
+        $modelDepartHasEmpleado = Model('EmpleadoHasDepartamento');
+
+        $data2 = $modelDepartHasEmpleado->select('id_departamento')->where('id_empleado', $idEmpleado)->get()->getResultArray();
+
+        if (count($data2) > 0) {
+
+            $idDepart = $data2[0]['id_departamento'];
+
+
+            $data = $this->select('nombre')
+                ->where('id_depart', $idDepart)
+                ->get()
+                ->getRow();
+
+            if ($data) {
+                $name = $data->nombre;
+            }
+
+        }
+
+        return $name;
     }
 
     public function departamento_ajax()
@@ -44,7 +62,6 @@ class Departamento extends Model
 
         $entityDepartamento = new DepartamentoEntity($departamento);
         $this->insert($entityDepartamento);
-
     }
 
     public function modify_Departamento($departamento)
@@ -59,7 +76,7 @@ class Departamento extends Model
 
         $this->delete($id);
     }
-    
+
 
 
     public function departamento_ajax_select()
@@ -74,5 +91,4 @@ class Departamento extends Model
         $data1 = ($data);
         echo json_encode($data1);
     }
-
 }

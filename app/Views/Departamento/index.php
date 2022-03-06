@@ -26,19 +26,19 @@ Departamento
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <table class="table datatable" id="departamentos">
+                        <table class="table datatable text-center" id="departamentos" width="100%" cellspacing="0" cellpadding="">
                             <thead>
                                 <tr>
-                                    <th>
+                                    <th class="text-center">
                                         ID
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         Nombre Departamento
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         Descripcion
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         Acciones
                                     </th>
                                 </tr>

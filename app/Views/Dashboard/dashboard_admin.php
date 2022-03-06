@@ -18,7 +18,7 @@ Dashboard
     </header>
     <div class="page-content">
         <div class="container-fluid">
-            
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2>Datos</h2>
@@ -26,25 +26,25 @@ Dashboard
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <table class="table datatable" id="empleados">
+                        <table class="table datatable nowrap text-center" id="empleados" width="100%" cellspacing="0" cellpadding="">
                             <thead>
                                 <tr>
-                                    <th>
+                                    <th class="text-center">
                                         ID
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         Nombre
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         DNI
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         FECHA NACIMIENTO
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         Departamento
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         ACCIONES
                                     </th>
                                 </tr>
@@ -126,7 +126,7 @@ Dashboard
                         "data": "id_empleado",
                         render: function(data) {
                             var btns = "";
-                            btns += "<a href='<?php echo base_url() ?>/Empleado/modificarEmpleado/"+data+"' class='<?= btn_editar_class ?>' style='margin-right: 20px; width: 160px' ><?= btn_editar ?></a>";
+                            btns += "<a href='<?php echo base_url() ?>/Empleado/modificarEmpleado/" + data + "' class='<?= btn_editar_class ?>' style='margin-right: 20px; width: 160px' ><?= btn_editar ?></a>";
                             btns += "<button class='<?= btn_elimnar_class ?>' value='" + data + "' onclick='trash(" + data + ")' class='btn btn-info' style='width: 160px ' ><?= btn_elimnar ?></button>"
                             return btns
                         }
