@@ -15,8 +15,6 @@ class Proyecto extends Model
 
     public function proyecto_ajax()
     {
-        $modelDepart = Model('Proyecto');
-
         $data = $this->select("proyectos.id, nombre, descripcion, fecha_inicio, fecha_fin")->get()->getResultArray();
 
         if (count($data) > 0) {
@@ -33,5 +31,4 @@ class Proyecto extends Model
 
         $this->delete($id);
     }
-
 }

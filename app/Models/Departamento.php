@@ -28,8 +28,6 @@ class Departamento extends Model
 
     public function departamento_ajax()
     {
-        $modelDepart = Model('Departamento');
-
         $data = $this->select("departamentos.id_depart, nombre, descripcion")->get()->getResultArray();
 
         if (count($data) > 0) {
