@@ -71,7 +71,20 @@ class Login extends BaseController
 
 	public function admin()
 	{
-		return view('dashboard_admin');
+
+        if(session('permisos') == 0){
+
+            return view('Dashboard\dashboard_admin');
+
+        }
+
+        if(session('permisos') == 1){
+
+            return view('Dashboard\dashboard_empleado');
+
+        }
+
+
 	}
 
 }

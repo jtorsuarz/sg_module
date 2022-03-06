@@ -24,7 +24,7 @@
             <i class="mdi mdi-menu"></i>
         </button>
         <a class="navbar-brand" href="/">
-            <h8 class="navbar-brand-text">ADMINISTRADOR
+            <h8 class="navbar-brand-text"><?= session('permiso_name') ?>
                 <span style="font-size: 60%; padding-left: 20px">
                         Rubén García Barco
                     </span>

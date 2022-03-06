@@ -15,7 +15,7 @@
                     </div>
                     <div class="sidebar-user-name">
                         <!-- session('user_name')  -->
-                        Rubén García
+                        <?= session('username') ?>
                         <span class="sidebar-user-expand"><i class="fa fa-caret-down"></i></span>
                         <span class="text-small sidebar-user-email">
                             <?= session('user_email') ?>
@@ -166,7 +166,7 @@
         <div class="horizontal-nav">
             <ul class="horizontal-nav horizontal-nav-1">
                 <li>
-                    <a href="<?php echo base_url() ?>"><i class="mdi mdi-logout"></i></a>
+                    <a href="<?php echo base_url(route_to('Logout')) ?>"><i class="mdi mdi-logout"></i></a>
                 </li>
             </ul>
         </div>

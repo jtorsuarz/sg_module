@@ -33,6 +33,7 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 $routes->post('loggers', 'Login::loggers', ['as' => 'Signin']);
 $routes->get('Login', 'Login::index', ['as' => 'Login']);
+$routes->get('Logout', 'Login::logout', ['as' => 'Logout']);
 
 
 $routes->group('/', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
