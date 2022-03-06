@@ -7,8 +7,6 @@ use CodeIgniter\Entity\Entity;
 class UsuarioEntity extends Entity
 {
     
-    protected $dates = ['created_at','updated_at'];
-
     protected function setPassword(string $password){
 
         $this->attributes['password'] = password_hash($password, PASSWORD_DEFAULT);

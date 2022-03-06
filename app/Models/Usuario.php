@@ -15,13 +15,24 @@ class Usuario extends Model
     protected $protectFields    = true;
     protected $allowedFields    = ['id', 'usuario', 'password', 'id_empleado'];
 
-	public function saveSession($user)
-	{
-		session()->set([
+    public function saveSession($user)
+    {
+
+        $empleado = Model('Empleado')->find($user->id_empleado);
+
+        session()->set([
             'user_id' => $user->id,
-            'user_email' => $user->email,
-            'user_name' => $user->nombre. ' '. $user->apellidos,
+            'username' => $user->usuario,
+            'username' => $empleado->nombre . ' ' . $empleado->apellidos,
+            'user_permiso' => $empleado->id_permiso,
             'is_logged' => true
         ]);
-	}
+    }
+
+
+    public function getUserBy(string $columna, string $value)
+    {
+
+        return $this->where($columna, $value)->first();
+    }
 }

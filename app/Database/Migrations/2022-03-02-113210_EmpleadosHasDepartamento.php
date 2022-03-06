@@ -13,7 +13,7 @@ class EmpleadosHasDepartamento extends Migration
             'id_empleado'          => [
                 'type'           => 'INT',
                 'constraint'     => '12',
-                'unsigned'       => true,
+                'unsigned'       => false,
                 'null'           => false,
             ],
             'id_departamento'          => [
@@ -23,8 +23,10 @@ class EmpleadosHasDepartamento extends Migration
                 'null'           => false,
             ]
         ]);
+        /*
         $this->forge->addForeignKey('id_empleado', 'empleados', 'id_empleado', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('id_departamento', 'departamentos', 'id_depart', 'CASCADE', 'CASCADE');
+        */
         $this->forge->createTable('empleado_has_departamentos');
     }
 

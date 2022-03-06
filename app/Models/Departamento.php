@@ -53,4 +53,19 @@ class Departamento extends Model
         $this->delete($id);
     }
     
+
+
+    public function departamento_ajax_select()
+    {
+        $data = $this->select("departamentos.id_depart, nombre, descripcion")->get()->getResultArray();
+
+        if (count($data) > 0) {
+
+            $data1 = ($data);
+        }
+
+        $data1 = ($data);
+        echo json_encode($data1);
+    }
+
 }

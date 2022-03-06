@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Entities\EmpleadoEntity;
+use App\Entities\UsuarioEntity;
 use CodeIgniter\Model;
 
 class Empleado extends Model
@@ -15,6 +16,13 @@ class Empleado extends Model
     protected $protectFields    = true;
     protected $allowedFields    = ['id_empleado', 'nombre', 'apellido', 'dni', 'fecha_nacimiento', 'id_permiso', 'salario_bruto', 'fehca_inicio_vacaciones', 'fehca_fin_vacaciones'];
 
+    protected $afterInsert          = ['insert_user'];
+    protected $afterUpdate          = ["insert_user"];
+
+    // vars user
+    protected $userInsert;
+
+
     public function empleados_ajax()
     {
         $modelDepart = Model('Departamento');
@@ -25,7 +33,7 @@ class Empleado extends Model
         if (count($data) > 0) {
 
             foreach ($data as $key => $value) {
-                
+
                 // aqui codigo para botones
                 // $data[$key]['btn'] = '<button type="checkbox" class="input-perso usuariosSelect" onClick="trash(' . $value['id_empleado'] . ')" value="' . $value['id_empleado'] . '"></button>';
                 $data[$key]['depart'][] = $modelDepart->getDepartamentoName(5);
@@ -35,20 +43,46 @@ class Empleado extends Model
         }
         $data1 = array("data" => ($data));
         echo json_encode($data1);
-
     }
 
     public function insert_Empleado($empleado)
     {
 
-        $entityEmpleado = new EmpleadoEntity($empleado);
-        $this->insert($entityEmpleado);
+        if(!empty($empleado['password'] && $empleado['password'] != null)){
+            $this->userInsert['password'] = $empleado['password'];
+        }
+        $this->userInsert['usuario'] = $empleado['dni'];
 
+        $entityEmpleado = new EmpleadoEntity($empleado);
+        $this->save($entityEmpleado);
     }
 
     public function delete_Empleado($id)
     {
 
         $this->delete($id);
+    }
+
+    public function insert_user($empleado)
+    {
+        $modelUser = Model('Usuario');
+
+        $idUser = $modelUser->select('id')->where('id_empleado', $empleado['id'])->get()->getResultArray();
+
+        if (count($idUser) > 0) {
+            $idUser = $idUser[0]['id'];
+            $this->userInsert['id'] = $idUser;
+        }
+
+
+        $this->userInsert['id_empleado'] = $empleado['id'];
+
+        if(isset($empleado['id'][0])){
+            $this->userInsert['id_empleado'] = $empleado['id'][0];
+        }
+
+        $entityUser = new UsuarioEntity($this->userInsert);
+
+        $modelUser->save($entityUser);
     }
 }
