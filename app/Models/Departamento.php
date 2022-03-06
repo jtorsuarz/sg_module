@@ -26,4 +26,25 @@ class Departamento extends Model
         return $data->nombre;
     }
 
+    public function departamento_ajax()
+    {
+        $modelDepart = Model('Departamento');
+
+        $data = $this->select("departamentos.id_depart, nombre, descripcion")->get()->getResultArray();
+
+        if (count($data) > 0) {
+
+            $data1 = array("data" => ($data));
+        }
+
+        $data1 = array("data" => ($data));
+        echo json_encode($data1);
+    }
+
+    public function delete_Departamento($id)
+    {
+
+        $this->delete($id);
+    }
+    
 }

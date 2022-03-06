@@ -12,11 +12,31 @@ class Departamento extends BaseController
 	}
 	public function nuevoDepartamentoView()
 	{
+		
+
 		return view('Departamento/nuevo');
 	}
 	public function modificaDepartamentoView()
 	{
 		return view('Departamento/modifica');
 	}
+
+	public function getListDepartamento(){
+
+		$model = Model('Departamento');
+
+        $model->departamento_ajax();
+	}
+
+	public function delete_Departamento(){
+
+        if($this->request->getPost() != null){
+
+            $model = Model('Departamento');
+
+            $departamento = $this->request->getPost();
+            $model->delete_Departamento($departamento['id']);
+        }
+    }
 
 }

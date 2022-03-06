@@ -116,7 +116,7 @@
                                 <a href="<?php echo base_url() ?>"><span class="title">Gestion vacaciones</span></a>
                             </li> -->
                             <li>
-                                <a href="<?php echo base_url() ?>/CalendarioView"><span class="title">Calendario</span></a>
+                                <a href="<?php echo base_url() ?>/Empleado/CalendarioTrabajoView"><span class="title">Calendario</span></a>
                             </li>
                         </ul>
                     </li><!-- End Item 5 VACACIONES  -->
@@ -129,9 +129,6 @@
                         <ul>
                             <li>
                                 <a role="button" type="submit" href="<?php echo base_url() ?>/pdfNomina"><span class="title">Nómina</span></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url() ?>"><span class="title">Vacaciones</span></a>
                             </li>
                         </ul>
                     </li><!-- End Item 6 DOCUMENTOS  -->
