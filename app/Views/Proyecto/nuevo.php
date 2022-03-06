@@ -65,6 +65,7 @@ Crear proyecto
                             </div>
                         </div>
                         <hr>
+
                         <!-- /.row -->
                         <button type="button" class="btn btn-primary" onclick="validar()">Enviar</button>
 
