@@ -54,7 +54,7 @@ Modificar Empleado
                             </div>
                             <div class="col-md-6">
                                 <label for="form1-fname">Password</label>
-                                <input  type="password" class="form-control" id="password">
+                                <input type="password" class="form-control" id="password">
                             </div>
                         </div>
                         <hr>
@@ -63,14 +63,14 @@ Modificar Empleado
                                 <label>Inicio vacaciones</label>
                                 <div class="input-group datepicker-input-group date">
                                     <input value="<?php echo $empleadoParaModificar->fehca_inicio_vacaciones ?>" class="form-control" id="fecha_inicio_vacaciones">
-                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <span class="input-group-addon" id="date-perso"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="form1-lname">Fin vacaciones</label>
                                 <div class="input-group datepicker-input-group date">
                                     <input value="<?php echo $empleadoParaModificar->fehca_fin_vacaciones ?>" class="form-control" id="fecha_fin_vacaciones">
-                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <span class="input-group-addon" id="date-perso"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@ Modificar Empleado
                                 <label for="form1-lname">Fecha Nacimiento</label>
                                 <div class="input-group datepicker-input-group date">
                                     <input value="<?php echo $empleadoParaModificar->fecha_nacimiento ?>" class="form-control" id="fecha_nacimiento">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <span class="input-group-addon" id="date-perso"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -115,13 +115,17 @@ Modificar Empleado
     </div>
 </div>
 <style>
-            input[type="number"] {
-                -webkit-appearance: textfield !important;
-                margin: 0;
-                -moz-appearance: textfield !important;
-            }
-            
-        </style>
+    input[type="number"] {
+        -webkit-appearance: textfield !important;
+        margin: 0;
+        -moz-appearance: textfield !important;
+    }
+
+    #date-perso {
+        background-color: white;
+        border: none;
+    }
+</style>
 <!-- porque somos unos vagos -->
 <input id="input_id_empleado" type="hidden" value="<?php echo $empleadoParaModificar->id_empleado ?>">
 
