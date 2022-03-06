@@ -31,7 +31,6 @@ Dashboard
                             <button type="submit" class="btn btn-primary btn-block">LOGIN</button>
                         </form>
                     </div>
-
                 </div>
                 <!-- /.panel-primary panel -->
             </div>

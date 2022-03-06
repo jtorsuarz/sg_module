@@ -14,8 +14,8 @@
                         <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFup-RDJ8fzXg/profile-displayphoto-shrink_200_200/0/1638466861416?e=1651708800&v=beta&t=OWOsjwHsnb8wchKDBUeI07xQLvna6CvcGlkYCNsG-34" alt="" class="img-circle img-online img-thumbnailimg-thumbnail-primary">
                     </div>
                     <div class="sidebar-user-name">
-                        <!-- session('user_name')  -->
-                        Rubén García
+                    <?php echo $_SESSION['username'] ?>
+                        <!-- Rubén García -->
                         <span class="sidebar-user-expand"><i class="fa fa-caret-down"></i></span>
                         <span class="text-small sidebar-user-email">
                             <?= session('user_email') ?>
