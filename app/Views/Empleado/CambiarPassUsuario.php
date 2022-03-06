@@ -72,6 +72,22 @@ Usuario
 <?= $this->section('linksNeed') ?>
 <script>
 
+    var colorError = '#ff5a81';
 
+    function validarContra() {
+
+        var contra = document.getElementById("contrasena");
+        // 8 caracteres, caracter especial, numeros
+        var regexPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+
+        if (!(regexPass.test(contra.value))) {
+
+            contrasena.style.borderColor = colorError;
+
+        } else {
+
+            contrasena.style.borderColor = 'white';
+        }
+    }
 </script>
 <?= $this->endSection() ?>
