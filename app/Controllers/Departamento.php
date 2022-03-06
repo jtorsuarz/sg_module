@@ -28,5 +28,15 @@ class Departamento extends BaseController
         $model->departamento_ajax();
 	}
 
+	public function delete_Departamento(){
+
+        if($this->request->getPost() != null){
+
+            $model = Model('Departamento');
+
+            $departamento = $this->request->getPost();
+            $model->delete_Departamento($departamento['id']);
+        }
+    }
 
 }
