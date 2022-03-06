@@ -1,11 +1,11 @@
 <?= $this->extend('Views/layout/main') ?>
 
 <?= $this->section('title') ?>
-    Crear proyecto
+Crear proyecto
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-    <div class="page">
+<div class="page">
     <header class="ribbon">
         <h2>
             Proyectos
@@ -50,12 +50,18 @@
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
-                                <label for="form1-fname">Inicio proyecto</label>
-                                <input type="date" class="form-control" id="f_Inicio">
+                                <label for="form1-lname">Inicio proyecto</label>
+                                <div class="input-group datepicker-input-group date">
+                                    <input class="form-control" id="f_Inicio">
+                                    <span class="input-group-addon" id="date-perso"><i class="fa fa-calendar"></i></span>
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="form1-lname">Fin proyecto</label>
-                                <input type="date" class="form-control" id="f_Final">
+                                <div class="input-group datepicker-input-group date">
+                                    <input class="form-control" id="f_Final">
+                                    <span class="input-group-addon" id="date-perso"><i class="fa fa-calendar"></i></span>
+                                </div>
                             </div>
                         </div>
                         <hr>
@@ -72,7 +78,29 @@
     </div>
     <?= $this->endSection() ?>
     <?= $this->section('linksNeed') ?>
+    <style>
+        #date-perso {
+            background-color: white;
+            border: none;
+        }
+    </style>
+    <script src="<?php echo base_url() . '/assets/' ?>vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
     <script>
+        $(function() {
+            $('.datepicker-input').datepicker({
+                format: 'yyyy-mm-dd',
+                orientation: 'bottom',
+                autoclose: true,
+
+            });
+            $('.datepicker-input-group').datepicker({
+                format: 'yyyy-mm-dd',
+                orientation: 'bottom ',
+                autoclose: true,
+            });
+        })
+
         var validadoTodo;
         var colorError = '#ff5a81';
 
@@ -86,7 +114,7 @@
             var fechaFinalInput = document.getElementById("f_Final");
 
 
-            if (idProyecto.value =='') {
+            if (idProyecto.value == '') {
                 idProyecto.style.borderColor = colorError;
                 validadoTodo = false;
             } else {
@@ -124,7 +152,5 @@
 
             return validadoTodo;
         }
-
-
     </script>
-<?= $this->endSection() ?>
+    <?= $this->endSection() ?>
