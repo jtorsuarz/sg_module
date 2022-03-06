@@ -19,9 +19,8 @@ class Empleado extends Model
     protected $afterInsert          = ['insert_user'];
     protected $afterUpdate          = ["insert_user"];
 
-    // vars user
+    // vars user 
     protected $userInsert;
-
 
     public function empleados_ajax()
     {

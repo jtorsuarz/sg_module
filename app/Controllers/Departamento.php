@@ -15,10 +15,6 @@ class Departamento extends BaseController
 		
 		return view('Departamento/nuevo');
 	}
-	public function modificaDepartamentoView()
-	{
-		return view('Departamento/modifica');
-	}
 
 	public function getListDepartamento(){
 
@@ -50,6 +46,29 @@ class Departamento extends BaseController
         }
     }
 
+	public function modificaDepartamento($id)
+    {
+
+        $model = Model('Departamento');
+
+        $departamentoParaModificar = $model->find($id);
+
+        return view('Departamento\modifica', compact("departamentoParaModificar"));
+    }
+
+    public function modificarDepartamentoDB()
+    {
+
+        if ($this->request->getPost() != null) {
+
+            $model = Model('Departamento');
+
+            $departamento = $this->request->getPost();
+
+            $model->modify_Departamento($departamento);
+
+        }
+    }
 	
 	public function getListDepartamento_select(){
 

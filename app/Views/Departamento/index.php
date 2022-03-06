@@ -112,7 +112,7 @@ Departamento
                         "data": "id_depart",
                         render: function(data) {
                             var btns = "";
-                            btns += "<a href='<?php echo base_url() ?>/Empleado/modificarEmpleado/" + data + "' class='<?= btn_editar_class ?>' style='margin-right: 20px; width: 140px' ><?= btn_editar ?></a>";
+                            btns += "<a href='<?php echo base_url() ?>/Departamento/modificaDepartamento/" + data + "' class='<?= btn_editar_class ?>' style='margin-right: 20px; width: 140px' ><?= btn_editar ?></a>";
                             btns += "<button class='<?= btn_elimnar_class ?>' value='" + data + "' onclick='trash(" + data + ")' class='btn btn-info' style='width: 140px ' ><?= btn_elimnar ?></button>"
                             return btns
                         }

@@ -14,7 +14,7 @@
             </h2>
 
             <ol class="breadcrumb">
-                <li><a href="#">Empleado</a></li>
+                <li><a href="<?php echo base_url() ?>/">Empleado</a></li>
                 <li class="active"><?php echo $empleadoParaModificar->nombre ?></li>
             </ol>
 
