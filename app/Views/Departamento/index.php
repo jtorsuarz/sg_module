@@ -97,7 +97,7 @@ Departamento
                 "ajax": "<?= base_url() ?>/Departamento/getListDepartamento/",
                 "type": "GET",
                 order: [
-                    [1, 'asc']
+                    [0, 'asc']
                 ],
                 "columns": [{
                         "data": "id_depart"

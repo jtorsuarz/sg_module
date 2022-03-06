@@ -36,10 +36,9 @@ Crear proyecto
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
-                                <label for="form1-fname">Descripcion</label>
+                                <label for="form1-fname">Descripcion corta</label>
                                 <input type="text" class="form-control" id="descripcion">
                             </div>
-
                             <div class="col-md-6">
 
                                 <label for="form1-fname">Departamento</label>
@@ -66,6 +65,7 @@ Crear proyecto
                             </div>
                         </div>
                         <hr>
+
                         <!-- /.row -->
                         <button type="button" class="btn btn-primary" onclick="validar()">Enviar</button>
 

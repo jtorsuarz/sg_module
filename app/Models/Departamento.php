@@ -39,6 +39,14 @@ class Departamento extends Model
         echo json_encode($data1);
     }
 
+    public function insert_Departamento($departamento)
+    {
+
+        $entityDepartamento = new DepartamentoEntity($departamento);
+        $this->insert($entityDepartamento);
+
+    }
+
     public function delete_Departamento($id)
     {
 
