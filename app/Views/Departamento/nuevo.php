@@ -14,6 +14,15 @@ Departamento
             <li><a href="#">Departamento</a></li>
             <li class="active">Nuevo departamento</li>
         </ol>
+
+        <style>
+            input[type="number"] {
+                -webkit-appearance: textfield !important;
+                margin: 0;
+                -moz-appearance: textfield !important;
+            }
+        </style>
+
     </header>
 
     <div class="page-content">
@@ -28,8 +37,8 @@ Departamento
                             <form class="mdform">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="form1-fname">ID Proyecto</label>
-                                        <input type="text" class="form-control" id="id_departamento">
+                                        <label for="form1-fname">ID Departamento</label>
+                                        <input type="number" class="form-control" id="id_departamento">
                                     </div>
                                     <div class="col-md-6">
                                         <label>Nombre</label>
@@ -67,15 +76,15 @@ Departamento
         function validar() {
             validadoTodo = true;
 
-            validarIDProyecto();
-            validarNombreProyecto();
+            validarIDDepartamento();
+            validarNombreDepartamento();
             // validarResponsable();
             validarDescripcion();
 
             return validadoTodo;
         }
 
-        function validarIDProyecto() {
+        function validarIDDepartamento() {
 
             var id_proyectoInput = document.getElementById("id_departamento");
 
@@ -89,7 +98,7 @@ Departamento
             }
         }
 
-        function validarNombreProyecto() {
+        function validarNombreDepartamento() {
 
             var RegexNombre = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
 

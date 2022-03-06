@@ -39,18 +39,18 @@ Agregar Empleado
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="form1-fname">Nombre</label>
-                                <input value="Ruben" type="text" class="form-control" id="nombre">
+                                <input value="Usuario" type="text" class="form-control" id="nombre">
                             </div>
                             <div class="col-md-6">
                                 <label for="form1-lname">Apellido</label>
-                                <input value="Garcia Barco" type="text" class="form-control" id="apellidos">
+                                <input value="de Prueba" type="text" class="form-control" id="apellidos">
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="form1-fname">DNI</label>
-                                <input value="51495264J" type="text" class="form-control" id="dni">
+                                <input value="00000000A" type="text" class="form-control" id="dni">
                             </div>
                             <div class="col-md-6">
                                 <label for="form1-fname">Password</label>
@@ -96,7 +96,7 @@ Agregar Empleado
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="form1-lname">Salario bruto</label>
-                                <input value="2300" type="number" class="form-control" id="salario">
+                                <input value="9999" type="number" class="form-control" id="salario">
                             </div>
                             <div class="col-md-6">
                                 <label for="form1-fname">Departamento</label>
