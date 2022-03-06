@@ -43,7 +43,6 @@ $routes->group('/', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'
     $routes->get('nuevoEmpleadoView', 'Empleado::agregarEmpleadosView', ['as' =>'viewEmpleado']);
     $routes->get('modificarEmpleado', 'Empleado::modificarEmpleado', ['as' =>'modificarEmpleado']);
     $routes->get('mostrarDatosEmpleadoView', 'Empleado::mostrarDatosEmpleadosView', ['as' =>'viewMostrarEmpleado']);
-    $routes->get('nuevoUsuarioView', 'Empleado::NuevoUsuariooView', ['as' =>'viewUsuario']);
 
     $routes->post('insert_Empleado', 'Empleado::insert_Empleado', ['as' =>'insert_Empleado']);
     $routes->post('delete_Empleado', 'Empleado::delete_Empleado', ['as' =>'delete_Empleado']);
@@ -58,6 +57,8 @@ $routes->group('/', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'
     // -- CALENDARIO --
     $routes->get('CalendarioView', 'Empleado::calendarioTrabajoView', ['as' =>'viewMostrarCalendario']);
 
+	// USUARIOs
+	$routes->get('CambiarPassUsuarioView', 'Empleado::CambiarPassUsuario', ['as' =>'CambiarPassUsuarioView']);
 
 	//DEPARTAMENTO
 	$routes->get('index', 'Departamento::index', ['as' => 'DepartamentoView']);
