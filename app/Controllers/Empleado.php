@@ -83,4 +83,10 @@ class Empleado extends BaseController
         return view('Empleado\Calendario');
 
     }
+    public function NuevoUsuariooView()
+    {
+
+        return view('Empleado\NuevoUsuario');
+
+    }
 }
