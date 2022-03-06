@@ -147,6 +147,9 @@
                             <li>
                                 <a href="<?php echo base_url() ?>"><span class="title">Roles / Permisos</span></a>
                             </li>
+                            <li>
+                                <a href="<?php echo base_url() ?>/Empleado/CambiarPassUsuario"><span class="title">Cambiar contraseña</span></a>
+                            </li>
 
                         </ul>
                     </li><!-- End Item 7 CONFIGURACION  -->

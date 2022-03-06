@@ -86,10 +86,10 @@ class Empleado extends BaseController
 
     }
 
-    public function NuevoUsuarioView()
+    public function CambiarPassUsuario()
     {
 
-        return view('Empleado\NuevoUsuario');
+        return view('Empleado\CambiarPassUsuario');
 
     }
 }
