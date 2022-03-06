@@ -102,7 +102,7 @@ Dashboard
 
             $('#empleados').dataTable({
 
-                "ajax": "<?= base_url() ?>/Empleado/getListEmpleados/",
+                "ajax": "<?= base_url() ?>/Empleado/listEmpleados/",
                 "type": "GET",
                 order: [
                     [0, 'asc']
@@ -139,7 +139,7 @@ Dashboard
     function trash(id) {
 
         $.ajax({
-            url: "<?php echo base_url() ?>/Empleado/delete_Empleado",
+            url: "<?php echo base_url() ?>/Empleado/delete_EmpleadoDB",
             type: 'POST',
             data: {
                 id: id

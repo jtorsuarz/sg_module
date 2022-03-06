@@ -39,7 +39,7 @@ Usuario
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="form1-fname">Antigua contraseña</label>
-                                <input value="" type="password" class="form-control center" id="antigua_pass">
+                                <input type="password" class="form-control center" id="antigua_pass">
                             </div>
                         </div>
                         <hr>
@@ -53,7 +53,7 @@ Usuario
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="form1-fname">Repetir nueva contraseña</label>
-                                <input value="" type="password" class="form-control center" id="nueva_pass">
+                                <input value="" type="password" class="form-control center" id="nueva_pass_repetida">
                             </div>
                         </div>
                         <hr>

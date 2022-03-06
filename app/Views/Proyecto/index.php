@@ -100,7 +100,7 @@ Departamento
 
             $('#proyectos').dataTable({
 
-                "ajax": "<?= base_url() ?>/Proyecto/getListaProyectos/",
+                "ajax": "<?= base_url() ?>/Proyecto/getListaProyectosBD/",
                 "type": "GET",
                 order: [
                     [0, 'asc']
@@ -137,7 +137,7 @@ Departamento
     function trash(id) {
 
         $.ajax({
-            url: "<?php echo base_url() ?>/Proyecto/delete_Proyecto",
+            url: "<?php echo base_url() ?>/Proyecto/delete_ProyectoDB",
             type: 'POST',
             data: {
                 id: id

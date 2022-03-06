@@ -85,6 +85,12 @@ class Empleado extends BaseController
 
     }
 
+    public function pdfNomina()
+    {
+
+        return view('Nomina/pdfNomina');
+    }
+
     public function CambiarPassUsuario()
     {
 
