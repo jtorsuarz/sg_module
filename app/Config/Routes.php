@@ -39,7 +39,21 @@ $routes->get('Logout', 'Login::logout', ['as' => 'Logout']);
 $routes->group('/', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
 
 	$routes->get('', 'Login::admin', ['as' => 'viewDashboardAdmin']);
+<<<<<<< Updated upstream
 });
+=======
+	$routes->get('listEmpleados', 'Empleado::getListEmpleados', ['as' => 'listarEmpleados']);
+
+    $routes->get('nuevoEmpleadoView', 'Empleado::agregarEmpleadosView', ['as' =>'viewEmpleado']);
+    $routes->get('modificarEmpleado', 'Empleado::modificarEmpleado', ['as' =>'modificarEmpleado']);
+    $routes->get('mostrarDatosEmpleadoView', 'Empleado::mostrarDatosEmpleadosView', ['as' =>'viewMostrarEmpleado']);
+    $routes->get('nuevoUsuarioView', 'Empleado::NuevoUsuarioView', ['as' =>'viewUsuario']);
+
+    $routes->post('insert_Empleado', 'Empleado::insert_Empleado', ['as' =>'insert_Empleado']);
+    $routes->post('delete_Empleado', 'Empleado::delete_Empleado', ['as' =>'delete_Empleado']);
+
+    // -- INICIO DEPARTAMENTOS --
+>>>>>>> Stashed changes
 
 // EMPLEADOS
 $routes->group('Empleado', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
