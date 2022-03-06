@@ -51,4 +51,12 @@ class Departamento extends BaseController
         }
     }
 
+	
+	public function getListDepartamento_select(){
+
+		$model = Model('Departamento');
+
+        $model->departamento_ajax_select();
+	}
+
 }

@@ -18,10 +18,10 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Login');
-$routes->setDefaultMethod('admin');
+$routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(true);
+$routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
@@ -32,46 +32,43 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->post('loggers', 'Login::loggers', ['as' => 'Signin']);
+$routes->get('Login', 'Login::index', ['as' => 'Login']);
 
 
-// ? AccionesMk / metodo 
 $routes->group('/', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
 
 	$routes->get('', 'Login::admin', ['as' => 'viewDashboardAdmin']);
+});
+
+// EMPLEADOS
+$routes->group('Empleado', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
+
+	$routes->get('nuevoEmpleadoView', 'Empleado::agregarEmpleadosView', ['as' => 'viewEmpleado']);
+	$routes->post('insert_Empleado', 'Empleado::insert_Empleado', ['as' => 'insert_Empleado']);
+	$routes->get('modificarEmpleado/(:any)', 'Empleado::modificarEmpleado/$1', ['as' => 'modificarEmpleado']);
+	$routes->get('mostrarDatosEmpleadoView', 'Empleado::mostrarDatosEmpleadosView', ['as' => 'viewMostrarEmpleado']);
 	$routes->get('listEmpleados', 'Empleado::getListEmpleados', ['as' => 'listarEmpleados']);
-
-    $routes->get('nuevoEmpleadoView', 'Empleado::agregarEmpleadosView', ['as' =>'viewEmpleado']);
-    $routes->get('modificarEmpleado', 'Empleado::modificarEmpleado', ['as' =>'modificarEmpleado']);
-    $routes->get('mostrarDatosEmpleadoView', 'Empleado::mostrarDatosEmpleadosView', ['as' =>'viewMostrarEmpleado']);
-
-    $routes->post('insert_Empleado', 'Empleado::insert_Empleado', ['as' =>'insert_Empleado']);
-    $routes->post('delete_Empleado', 'Empleado::delete_Empleado', ['as' =>'delete_Empleado']);
-
-    // -- INICIO DEPARTAMENTOS --
-
-	$routes->get('listDepartamentos', 'Empleado::getListDepartamentos', ['as' => 'listDepartamentos']);
-	$routes->post('insert_Departamento', 'Empleado::insert_Departamento', ['as' =>'insert_Departamento']);
-
-    // -- INICIO PROYECTOS --
-
-    // -- CALENDARIO --
-    $routes->get('CalendarioView', 'Empleado::calendarioTrabajoView', ['as' =>'viewMostrarCalendario']);
 
 	// USUARIOs
 	$routes->get('CambiarPassUsuarioView', 'Empleado::CambiarPassUsuario', ['as' =>'CambiarPassUsuarioView']);
 
-	//DEPARTAMENTO
+	// -- CALENDARIO --
+	$routes->get('CalendarioView', 'Empleado::calendarioTrabajoView', ['as' => 'viewMostrarCalendario']);
+});
+//DEPARTAMENTO
+$routes->group('Departamento', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
 	$routes->get('index', 'Departamento::index', ['as' => 'DepartamentoView']);
 	$routes->get('nuevoDepartamento', 'Departamento::nuevoDepartamentoView', ['as' => 'nuevoDepartamentoView']);
-	$routes->get('modificaDepartamento', 'Departamento::modificaDepartamentoView', ['as' => 'modificaDepartamentoView']);
+	$routes->get('modificaDepartamento/(:any)', 'Departamento::modificaDepartamentoView/$1', ['as' => 'modificaDepartamentoView']);
 	$routes->get('listaDepartamento', 'Departamento::lista', ['as' => 'listaDepartamentoView']);
-
+});
+// PROYECTOS
+$routes->group('Proyecto', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
 	//PROYECTOS
 	$routes->get('index', 'Proyecto::index', ['as' => 'listaDepartamentoView']);
 	$routes->get('nuevoProyectoView', 'Proyecto::nuevoProyectoView', ['as' => 'nuevoProyectoView']);
 	$routes->get('modificaProyectoView', 'Proyecto::modificaProyectoView', ['as' => 'modificaProyectoView']);
 });
-
 /*
  * --------------------------------------------------------------------
  * Additional Routing

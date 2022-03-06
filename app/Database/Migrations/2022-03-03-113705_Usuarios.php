@@ -28,12 +28,13 @@ class Usuarios extends Migration
                 'null'           => true,
             ],
             'id_empleado'          => [
-                'type'           => 'VARCHAR',
-                'constraint'     => '255',
-                'null'           => true,
+                'type'           => 'INT',
+                'constraint'     => '12',
+                'null'           => false,
             ],
         ]);
         $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('id_empleado', 'empleados', 'id_empleado', 'CASCADE', 'CASCADE');
         $this->forge->createTable('usuarios');
     }
 
