@@ -140,7 +140,7 @@ Departamento
 
                 $.ajax({
 
-                    url: "<?php echo base_url() ?>/Departamento/insert_Departamento",
+                    url: "<?php echo base_url() ?>/Departamento/insert_DepartamentoDB",
                     type: "POST",
                     data: formData,
                     processData: false,

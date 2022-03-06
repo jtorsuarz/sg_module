@@ -26,7 +26,8 @@
         <a class="navbar-brand" href="/">
             <h8 class="navbar-brand-text"><?= session('permiso_name') ?>
                 <span style="font-size: 60%; padding-left: 20px">
-                        Rubén García Barco
+                        <!-- Rubén García Barco -->
+                    <?php echo $_SESSION['username'] ?>
                     </span>
             </h8>
         </a>

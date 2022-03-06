@@ -59,7 +59,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="<?php echo base_url() ?>/Empleado/agregarEmpleadosView"><span class="title">Nuevo empleado</span></a>
+                                <a href="<?php echo base_url() ?>/Empleado/nuevoEmpleadoView"><span class="title">Nuevo empleado</span></a>
                             </li>
                         </ul>
                     </li><!-- End Item 2 Empleados -->
@@ -80,7 +80,7 @@
                         </ul>
                         <ul class="">
                             <li>
-                                <a href="<?php echo base_url() ?>/Departamento/nuevoDepartamentoView"><span class="title">Nuevo departamento</span></a>
+                                <a href="<?php echo base_url() ?>/Departamento/nuevoDepartamento"><span class="title">Nuevo departamento</span></a>
                             </li>
                         </ul>
                     </li><!-- End Item 3 DEPARTAMENTOS  -->
@@ -116,7 +116,7 @@
                                 <a href="<?php echo base_url() ?>"><span class="title">Gestion vacaciones</span></a>
                             </li> -->
                             <li>
-                                <a href="<?php echo base_url() ?>/Empleado/CalendarioTrabajoView"><span class="title">Calendario</span></a>
+                                <a href="<?php echo base_url() ?>/Empleado/CalendarioView"><span class="title">Calendario</span></a>
                             </li>
                         </ul>
                     </li><!-- End Item 5 VACACIONES  -->
@@ -128,7 +128,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a role="button" type="submit" href="<?php echo base_url() ?>/pdfNomina"><span class="title">Nómina</span></a>
+                                <a role="button" type="submit" href="<?php echo base_url() ?>/Empleado/pdfNominaView"><span class="title">Nómina</span></a>
                             </li>
                         </ul>
                     </li><!-- End Item 6 DOCUMENTOS  -->
@@ -148,7 +148,7 @@
                                 <a href="<?php echo base_url() ?>"><span class="title">Roles / Permisos</span></a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url() ?>/Empleado/CambiarPassUsuario"><span class="title">Cambiar contraseña</span></a>
+                                <a href="<?php echo base_url() ?>/Empleado/CambiarPassUsuarioView"><span class="title">Cambiar contraseña</span></a>
                             </li>
 
                         </ul>
