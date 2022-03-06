@@ -52,14 +52,10 @@ Modificar Empleado
                                 <label for="form1-fname">DNI</label>
                                 <input value="<?php echo $empleadoParaModificar->dni ?>" type="text" class="form-control" id="dni">
                             </div>
-                            <div class="form-group md-form-group col-md-6">
-                                <label>Fecha Nacimiento</label>
-                                <div class="input-group datepicker-input-group date">
-                                    <input value="<?php echo $empleadoParaModificar->fecha_nacimiento ?>" class="form-control" id="fecha_nacimiento">
-                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                </div>
+                            <div class="col-md-6">
+                                <label for="form1-fname">Password</label>
+                                <input  type="password" class="form-control" id="password">
                             </div>
-
                         </div>
                         <hr>
                         <div class="row">
@@ -70,7 +66,6 @@ Modificar Empleado
                                     <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
-
                             <div class="col-md-6">
                                 <label for="form1-lname">Fin vacaciones</label>
                                 <div class="input-group datepicker-input-group date">
@@ -82,20 +77,26 @@ Modificar Empleado
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
-
+                                <label for="form1-lname">Fecha Nacimiento</label>
+                                <div class="input-group datepicker-input-group date">
+                                    <input value="<?php echo $empleadoParaModificar->fecha_nacimiento ?>" class="form-control" id="fecha_nacimiento">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <label for="form1-fname">Permisos</label>
                                 <select type="text" class="form-control" id="permisos">
                                     <option value="0" <?php echo $resultado = 0 == $empleadoParaModificar->id_permiso ? "selected" : ""; ?>>Permiso Administrador</option>
                                     <option value="1" <?php echo $resultado = 1 == $empleadoParaModificar->id_permiso ? "selected" : ""; ?>>Permiso Usuario</option>
                                 </select>
                             </div>
+                        </div>
+                        <hr>
+                        <div class="row">
                             <div class="col-md-6">
                                 <label for="form1-lname">Salario bruto</label>
                                 <input value="<?php echo $empleadoParaModificar->salario_bruto ?>" type="number" class="form-control" id="salario">
                             </div>
-                        </div>
-                        <hr>
-                        <div class="row">
                             <div class="col-md-6">
 
                                 <label for="form1-fname">Departamento</label>
@@ -119,6 +120,7 @@ Modificar Empleado
                 margin: 0;
                 -moz-appearance: textfield !important;
             }
+            
         </style>
 <!-- porque somos unos vagos -->
 <input id="input_id_empleado" type="hidden" value="<?php echo $empleadoParaModificar->id_empleado ?>">
