@@ -105,7 +105,7 @@ Dashboard
                 "ajax": "<?= base_url() ?>/Empleado/getListEmpleados/",
                 "type": "GET",
                 order: [
-                    [1, 'asc']
+                    [0, 'asc']
                 ],
                 "columns": [{
                         "data": "id_empleado"

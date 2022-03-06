@@ -85,12 +85,8 @@ class Empleado extends BaseController
         return view('Empleado\Calendario');
 
     }
-<<<<<<< Updated upstream
-    public function NuevoUsuariooView()
-=======
 
     public function NuevoUsuarioView()
->>>>>>> Stashed changes
     {
 
         return view('Empleado\NuevoUsuario');

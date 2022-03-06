@@ -50,6 +50,9 @@ $routes->group('/', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'
 
     // -- INICIO DEPARTAMENTOS --
 
+	$routes->get('listDepartamentos', 'Empleado::getListDepartamentos', ['as' => 'listDepartamentos']);
+	$routes->post('insert_Departamento', 'Empleado::insert_Departamento', ['as' =>'insert_Departamento']);
+
     // -- INICIO PROYECTOS --
 
     // -- CALENDARIO --
