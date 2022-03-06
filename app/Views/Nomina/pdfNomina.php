@@ -17,9 +17,15 @@
     $pdf->Multicell(80,5,"IMF Smart Education\nC. de Bernardino Obregon, 25, 28012 Madrid\nTelefono: 913 64 51 57",1);
     $pdf ->Ln(5);
 
-    $pathLogoIMF = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/IMF_Smart_Education.png/800px-IMF_Smart_Education.png';
+    // CATCH POR SI WIKIPEDIA NOS CORTA EL CHIRINGUITO
+    try{
 
-    $pdf->Image($pathLogoIMF,150,8,50);
+      $pathLogoIMF = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/IMF_Smart_Education.png/800px-IMF_Smart_Education.png';
+      $pdf->Image($pathLogoIMF,150,8,50);
+
+    }catch(Exception $e){
+
+    }
 
     $pdf->SetFont('Arial','B',10);
     $pdf->setY(40);$pdf->setX(10);
