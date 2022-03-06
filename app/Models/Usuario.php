@@ -20,11 +20,20 @@ class Usuario extends Model
 
         $empleado = Model('Empleado')->find($user->id_empleado);
 
+        if ($empleado->id_permiso == 0) {
+            $permiso = 'Administrador';
+        }else{
+            $permiso = 'Empleado';
+        }
+
+        $permiso = strtoupper($permiso);
+
         session()->set([
-            'user_id' => $user->id,
-            'username' => $user->usuario,
+            'id' => $user->id,
+            'dni' => $user->usuario,
             'username' => $empleado->nombre . ' ' . $empleado->apellidos,
-            'user_permiso' => $empleado->id_permiso,
+            'permiso' => $empleado->id_permiso,
+            'permiso_name' => $permiso,
             'is_logged' => true
         ]);
     }
