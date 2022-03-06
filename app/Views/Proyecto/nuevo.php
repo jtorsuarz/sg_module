@@ -42,7 +42,7 @@
 
                             <div class="col-md-6">
 
-                                <label for="form1-fname">Permisos</label>
+                                <label for="form1-fname">Departamento</label>
                                 <select type="text" class="form-control" id="permisos">
                                     <option value="0"></option>
                                 </select>

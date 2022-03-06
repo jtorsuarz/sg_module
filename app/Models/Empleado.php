@@ -28,7 +28,7 @@ class Empleado extends Model
                 
                 // aqui codigo para botones
                 // $data[$key]['btn'] = '<button type="checkbox" class="input-perso usuariosSelect" onClick="trash(' . $value['id_empleado'] . ')" value="' . $value['id_empleado'] . '"></button>';
-                $data[$key]['depart'][] = $modelDepart->getDepartamentoName(1);
+                $data[$key]['depart'][] = $modelDepart->getDepartamentoName(5);
             }
 
             $data1 = array("data" => ($data));
