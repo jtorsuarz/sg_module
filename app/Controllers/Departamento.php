@@ -13,7 +13,6 @@ class Departamento extends BaseController
 	public function nuevoDepartamentoView()
 	{
 		
-
 		return view('Departamento/nuevo');
 	}
 	public function modificaDepartamentoView()
