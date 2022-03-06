@@ -156,5 +156,29 @@ Departamento
                 })
             }
         })
+  
+        // FUNCION QUE DEVUELVE UN SELECT PARA FILTRAR
+        $(function() {
+            $.ajax({
+                url: "<?= base_url() ?>/Empleado/getAdminsJSON",
+                type: "GET",
+                success: function(data) {
+                    var json = JSON.parse(data);
+                    if (json.length === 0) {
+                        $("#id_responsable").html('');
+                        $("#id_responsable").append('<option  selected disable>No hay Responsables registradas</option>');
+                        $('#id_responsable').selectpicker('refresh');
+
+                    } else {
+                        $("#id_responsable").html('');
+                        $.each(json, function(i, item) {
+                            console.log(item);
+                            $("#id_responsable").append('<option value="' + item.id_empleado + '">' + item.fullName + '</option>');
+                        });
+                        $('#id_responsable').selectpicker('refresh');
+                    }
+                }
+            });
+        })
     </script>
     <?= $this->endSection() ?>

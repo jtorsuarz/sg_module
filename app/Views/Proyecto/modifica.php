@@ -24,11 +24,7 @@
                 <div class="panel-body">
                     <form class="mdform">
                         <div class="row">
-                            <div class="col-md-6">
-                                <label for="form1-email">Id Proyecto</label>
-                                <input type="text" class="form-control" id="idProyecto">
-                            </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label>Nombre Proyecto</label>
                                 <input type="text" class="form-control" id="nombreProyecto">
                             </div>

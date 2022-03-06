@@ -15,6 +15,14 @@ class Empleado extends BaseController
 
     }
 
+    public function getListAdministradores()
+    {
+        $model = Model('Empleado');
+
+        $model->administrados_ajax();
+
+    }
+
     public function agregarEmpleadosView()
     {
 

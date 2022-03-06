@@ -12,13 +12,11 @@ class DepartamentoHasProyecto extends Migration
             'id_departamento'          => [
                 'type'           => 'INT',
                 'constraint'     => '12',
-                'unsigned'       => true,
                 'null'           => false,
             ],
             'id_proyecto'          => [
                 'type'           => 'INT',
                 'constraint'     => '12',
-                'unsigned'       => true,
                 'null'           => false,
             ]
         ]);

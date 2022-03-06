@@ -236,6 +236,7 @@ Agregar Empleado
             formData.append('dni', $('#dni').val());
             formData.append('id_permiso', $('#permisos').val());
             formData.append('fecha_nacimiento', ($('#fecha_nacimiento').val()));
+            formData.append('id_departamento', ($('#departamento').val()));
             formData.append('fehca_inicio_vacaciones', ($('#fecha_inicio_vacaciones').val()));
             formData.append('fehca_fin_vacaciones', ($('#fecha_fin_vacaciones').val()));
             formData.append('salario_bruto', $('#salario').val());
@@ -273,10 +274,10 @@ Agregar Empleado
         });
     })
 
-    // FUNCION QUE DEVUELVE EMPRESAS EN SELECT PARA FILTRAR
+    // FUNCION QUE DEVUELVE UN SELECT PARA FILTRAR
     $(function() {
         $.ajax({
-            url: "<?= base_url() ?>/Departamento/getListDepartamento_select",
+            url: "<?= base_url() ?>/Departamento/getDepartJSON",
             type: "GET",
             success: function(data) {
                 var json = JSON.parse(data);

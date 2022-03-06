@@ -1,4 +1,3 @@
-
 <?= $this->extend('Views/layout/main') ?>
 
 <?= $this->section('title') ?>
@@ -27,25 +26,25 @@ Departamento
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <table class="table datatable" id="proyectos">
+                        <table class="table datatable nowrap text-center" id="proyectos" width="100%" cellspacing="0" cellpadding="">
                             <thead>
                                 <tr>
-                                    <th>
+                                    <th class="text-center">
                                         ID
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         Nombre
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         Descripcion
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         Inicio
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         Fin
                                     </th>
-                                    <th>
+                                    <th class="text-center">
                                         Acciones
                                     </th>
                                 </tr>
