@@ -140,7 +140,7 @@ Departamento
 
                 $.ajax({
 
-                    url: "<?php echo base_url() ?>/Departamento/insert_DepartamentoDB",
+                    url: "<?php echo base_url() ?>/Departamento/insert_Departamento",
                     type: "POST",
                     data: formData,
                     processData: false,
@@ -156,8 +156,7 @@ Departamento
                 })
             }
         })
-
-
+  
         // FUNCION QUE DEVUELVE UN SELECT PARA FILTRAR
         $(function() {
             $.ajax({

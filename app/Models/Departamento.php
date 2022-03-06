@@ -64,6 +64,13 @@ class Departamento extends Model
         $this->insert($entityDepartamento);
     }
 
+    public function modify_Departamento($departamento)
+    {
+
+        $entityDepartamento = new DepartamentoEntity($departamento);
+        $this->save($entityDepartamento);
+    }
+
     public function delete_Departamento($id)
     {
 

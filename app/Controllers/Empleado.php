@@ -59,7 +59,6 @@ class Empleado extends BaseController
 
         $model = Model('Empleado');
 
-        $empleado = $this->request->getPost();
         $empleadoParaModificar = $model->find($id);
 
         return view('Empleado\ModificarEmpleado', compact("empleadoParaModificar"));

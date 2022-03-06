@@ -49,12 +49,12 @@ $routes->group('Empleado', ['filter' => 'authGuard'], ['namespace' => 'App\Contr
 	$routes->post('delete_EmpleadoDB', 'Empleado::delete_Empleado', ['as' => 'delete_EmpleadoDB']);
 	$routes->post('modificarEmpleadoDB', 'Empleado::modificarEmpleadoDB', ['as' => 'modificarEmpleadoDB']);
 	$routes->get('modificarEmpleado/(:any)', 'Empleado::modificarEmpleado/$1', ['as' => 'modificarEmpleado']);
+
 	$routes->get('mostrarDatosEmpleadoView', 'Empleado::mostrarDatosEmpleadosView', ['as' => 'viewMostrarEmpleado']);
 
 	// GET JSON
 	$routes->get('getAdminsJSON', 'Empleado::getListAdministradores', ['as' => 'getAdminsJSON']);
 	$routes->get('listEmpleados', 'Empleado::getListEmpleados', ['as' => 'listarEmpleados']);
-
 
 	// USUARIOs
 	$routes->get('CambiarPassUsuarioView', 'Empleado::CambiarPassUsuario', ['as' => 'CambiarPassUsuarioView']);
@@ -64,17 +64,20 @@ $routes->group('Empleado', ['filter' => 'authGuard'], ['namespace' => 'App\Contr
 	// -- NÓMINA -- 
 	$routes->get('pdfNominaView', 'Empleado::pdfNomina', ['as' => 'pdfNominaView']);
 });
+
 //DEPARTAMENTO
-$routes->group('Departamento', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
+
+	$routes->group('Departamento', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {
 	$routes->get('index', 'Departamento::index', ['as' => 'DepartamentoView']);
 	$routes->get('nuevoDepartamento', 'Departamento::nuevoDepartamentoView', ['as' => 'nuevoDepartamentoView']);
-	$routes->get('modificaDepartamento/(:any)', 'Departamento::modificaDepartamentoView/$1', ['as' => 'modificaDepartamentoView']);
+	$routes->get('modificaDepartamento/(:any)', 'Departamento::modificaDepartamento/$1', ['as' => 'modificaDepartamento']);
 	$routes->get('listaDepartamento', 'Departamento::getListDepartamento', ['as' => 'listaDepartamentoView']);
 
+	$routes->post('insert_Departamento', 'Departamento::insert_Departamento', ['as' => 'insert_Departamento']);
+	$routes->post('modificarDepartamentoDB', 'Departamento::modificarDepartamentoDB', ['as' => 'modificarDepartamentoDB']);
 	// json 
 	$routes->get('getDepartJSON', 'Departamento::getListDepartamento_select', ['as' => 'getDepartJSON']);
 
-	$routes->post('insert_DepartamentoDB', 'Departamento::insert_Departamento', ['as' => 'insert_DepartamentoDB']);
 	$routes->post('delete_DepartamentoDB', 'Departamento::delete_Departamento', ['as' => 'delete_DepartamentoDB']);
 });
 // PROYECTOS
