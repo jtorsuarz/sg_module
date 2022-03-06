@@ -52,14 +52,10 @@ Agregar Empleado
                                 <label for="form1-fname">DNI</label>
                                 <input value="514945264J" type="text" class="form-control" id="dni">
                             </div>
-                            <div class="form-group md-form-group col-md-6">
-                                <label>Fecha Nacimiento</label>
-                                <div class="input-group datepicker-input-group date">
-                                    <input value="2017-06-01" class="form-control" id="fecha_nacimiento">
-                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                </div>
+                            <div class="col-md-6">
+                                <label for="form1-fname">Password</label>
+                                <input type="password" class="form-control" id="password">
                             </div>
-
                         </div>
                         <hr>
                         <div class="row">
@@ -67,7 +63,7 @@ Agregar Empleado
                                 <label>Inicio vacaciones</label>
                                 <div class="input-group datepicker-input-group date">
                                     <input value="2022-05-01" class="form-control" id="fecha_inicio_vacaciones">
-                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <span id="date-perso" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
 
@@ -75,29 +71,34 @@ Agregar Empleado
                                 <label for="form1-lname">Fin vacaciones</label>
                                 <div class="input-group datepicker-input-group date">
                                     <input value="2022-06-01" class="form-control" id="fecha_fin_vacaciones">
-                                    <span style="background-color: white; border: none" class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <span id="date-perso" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
-
+                                <label for="form1-lname">Fecha Nacimiento</label>
+                                <div class="input-group datepicker-input-group date">
+                                    <input  class="form-control" id="fecha_nacimiento">
+                                    <span class="input-group-addon" id="date-perso"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <label for="form1-fname">Permisos</label>
                                 <select type="text" class="form-control" id="permisos">
                                     <option value="0">Permiso Administrador</option>
                                     <option selected value="1">Permiso Usuario</option>
                                 </select>
                             </div>
-                            <div class="col-md-6">
-                                <label for="form1-lname">Salario bruto</label>
-                                <input value="2300" type="number" class="form-control" id="salario">
-                            </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
-
+                                <label for="form1-lname">Salario bruto</label>
+                                <input value="2300" type="number" class="form-control" id="salario">
+                            </div>
+                            <div class="col-md-6">
                                 <label for="form1-fname">Departamento</label>
                                 <select type="text" class="form-control" id="departamento">
                                     <option value="0"></option>
@@ -114,6 +115,18 @@ Agregar Empleado
         </div>
     </div>
 </div>
+<style>
+    input[type="number"] {
+        -webkit-appearance: textfield !important;
+        margin: 0;
+        -moz-appearance: textfield !important;
+    }
+
+    #date-perso {
+        background-color: white;
+        border: none;
+    }
+</style>
 
 <?= $this->endSection() ?>
 <?= $this->section('linksNeed') ?>
@@ -122,7 +135,6 @@ Agregar Empleado
 <script src="<?php echo base_url() . '/assets/' ?>vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
 <script>
-
     var validadoTodo;
     var colorError = '#ff5a81';
 
