@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Entities\EmpleadoEntity;
 
 class Empleado extends BaseController
 {
-    
+
     public function getListEmpleados()
     {
         $model = Model('Empleado');
@@ -23,8 +24,8 @@ class Empleado extends BaseController
 
     public function insert_Empleado()
     {
-       
-        if($this->request->getPost() != null){
+
+        if ($this->request->getPost() != null) {
 
             $model = Model('Empleado');
 
@@ -33,9 +34,10 @@ class Empleado extends BaseController
         }
     }
 
-    public function delete_Empleado(){
+    public function delete_Empleado()
+    {
 
-        if($this->request->getPost() != null){
+        if ($this->request->getPost() != null) {
 
             $model = Model('Empleado');
 
@@ -57,8 +59,8 @@ class Empleado extends BaseController
 
     public function modificarEmpleadoDB()
     {
-       
-        if($this->request->getPost() != null){
+
+        if ($this->request->getPost() != null) {
 
             $model = Model('Empleado');
 
@@ -83,7 +85,12 @@ class Empleado extends BaseController
         return view('Empleado\Calendario');
 
     }
+<<<<<<< Updated upstream
     public function NuevoUsuariooView()
+=======
+
+    public function NuevoUsuarioView()
+>>>>>>> Stashed changes
     {
 
         return view('Empleado\NuevoUsuario');
