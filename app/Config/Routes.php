@@ -50,13 +50,11 @@ $routes->group('Empleado', ['filter' => 'authGuard'], ['namespace' => 'App\Contr
 	$routes->post('modificarEmpleadoDB', 'Empleado::modificarEmpleadoDB', ['as' => 'modificarEmpleadoDB']);
 	$routes->get('modificarEmpleado/(:any)', 'Empleado::modificarEmpleado/$1', ['as' => 'modificarEmpleado']);
 
-	// VISTA PARA EL MODO USUARIO ¡¡ NO ADMIN !!
 	$routes->get('mostrarDatosEmpleadoView', 'Empleado::mostrarDatosEmpleadosView', ['as' => 'viewMostrarEmpleado']);
 
 	// GET JSON
 	$routes->get('getAdminsJSON', 'Empleado::getListAdministradores', ['as' => 'getAdminsJSON']);
 	$routes->get('listEmpleados', 'Empleado::getListEmpleados', ['as' => 'listarEmpleados']);
-
 
 	// USUARIOs
 	$routes->get('CambiarPassUsuarioView', 'Empleado::CambiarPassUsuario', ['as' => 'CambiarPassUsuarioView']);
@@ -77,6 +75,9 @@ $routes->group('Empleado', ['filter' => 'authGuard'], ['namespace' => 'App\Contr
 
 	$routes->post('insert_Departamento', 'Departamento::insert_Departamento', ['as' => 'insert_Departamento']);
 	$routes->post('modificarDepartamentoDB', 'Departamento::modificarDepartamentoDB', ['as' => 'modificarDepartamentoDB']);
+	// json 
+	$routes->get('getDepartJSON', 'Departamento::getListDepartamento_select', ['as' => 'getDepartJSON']);
+
 	$routes->post('delete_DepartamentoDB', 'Departamento::delete_Departamento', ['as' => 'delete_DepartamentoDB']);
 
 	// json 
