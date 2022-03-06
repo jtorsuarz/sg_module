@@ -13,7 +13,6 @@ class Usuarios extends Migration
             'id'          => [
                 'type'           => 'INT',
                 'constraint'     => '12',
-                'unsigned'       => true,
                 'auto_increment' => true,
                 'null'           => false,
             ],

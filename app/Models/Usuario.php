@@ -31,7 +31,7 @@ class Usuario extends Model
         session()->set([
             'id' => $user->id,
             'dni' => $user->usuario,
-            'username' => $empleado->nombre . ' ' . $empleado->apellidos,
+            'username' => $empleado->nombre . ' ' . $empleado->apellido,
             'permiso' => $empleado->id_permiso,
             'permiso_name' => $permiso,
             'is_logged' => true
