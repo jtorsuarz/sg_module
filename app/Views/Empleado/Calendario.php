@@ -6,7 +6,16 @@ Calendario de Trabajo
 
 <?= $this->section('content') ?>
 <!-- FullCalendar -->
-<link rel="stylesheet" href="<?php echo base_url() . '/assets/'?>vendor/fullcalendar/dist/fullcalendar.min.css">
+<link rel="stylesheet" href="<?php echo base_url() . '/assets/' ?>vendor/fullcalendar/dist/fullcalendar.min.css">
+<style>
+    .event {
+        background-color: red;
+    }
+    .redEvent{
+
+        background-color: red;
+    }
+</style>
 
 <div class="page">
     <header class="ribbon">
@@ -65,11 +74,16 @@ Calendario de Trabajo
 <?= $this->endSection() ?>
 
 <?= $this->section('linksNeed') ?>
+
 <!-- FullCalendar -->
 <script src="<?php echo base_url() . '/assets/' ?>vendor/jquery-ui/jquery-ui.min.js"></script>
 <script src="<?php echo base_url() . '/assets/' ?>vendor/moment/min/moment.min.js"></script>
 <script src="<?php echo base_url() . '/assets/' ?>vendor/fullcalendar/dist/fullcalendar.min.js"></script>
 <script>
+    // POR EL POST PASAR LOS VALORES DE FECHA DE INICIO DE VACACIONES, CUMPLEAÑOS Y FIN DE VACAS  CAMBIAR VARIABLES ABAJO
+    var FechaInicioVacaciones = '2022-03-13';
+    var FechaFinVacaciones = '2022-03-23';
+    var FechaCumple = '2022-03-13';
     $(function () {
 
 
@@ -104,15 +118,43 @@ Calendario de Trabajo
                     title: 'Día Festivo',
                     start: '2022-03-06',
                     color: '#787878',
-                },
-                {
+
+                }, {
                     title: 'Día Festivo',
                     start: '2022-03-13',
                     color: '#787878',
 
+                },
+                {
+                    title: 'Día Festivo',
+                    start: '2022-03-20',
+                    color: '#787878',
+
+                },
+                {
+                    title: 'Día Festivo',
+                    start: '2022-03-27',
+                    color: '#787878',
+
+                },
+                {
+                    title: 'Inicio de vacaciones',
+                    start: FechaInicioVacaciones,
+                    color: '#e67a7a',
+                },
+                {
+                    title: 'Fin de Vacaciones',
+                    start: FechaFinVacaciones,
+                    color: '#e67a7a',
+
+                },
+                {
+                    title: '¡Feliz Cumpleaños!',
+                    start: FechaCumple,
+                    color: '#EE82EE',
                 }
-                // etc...
             ],
+
         })
     })
 
