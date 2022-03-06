@@ -143,10 +143,6 @@
                                 <a href="<?php echo base_url() ?>"><span class="title">
                                     </span></a>
                             </li> -->
-
-                            <li>
-                                <a href="<?php echo base_url() ?>"><span class="title">Roles / Permisos</span></a>
-                            </li>
                             <li>
                                 <a href="<?php echo base_url() ?>/Empleado/CambiarPassUsuarioView"><span class="title">Cambiar contraseña</span></a>
                             </li>
