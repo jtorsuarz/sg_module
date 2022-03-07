@@ -26,16 +26,32 @@ class Usuario extends Model
             $permiso = 'Empleado';
         }
 
+        $modelDepart = Model('Departamento');
+
         $permiso = strtoupper($permiso);
 
         session()->set([
             'id' => $user->id,
+            'id_empleado' => $empleado->id_empleado,
             'dni' => $user->usuario,
+            
+            'nombre' => $empleado->nombre,
+            'apellidos' => $empleado->apellido,
             'username' => $empleado->nombre . ' ' . $empleado->apellido,
+            'f_nacimiento' =>$empleado->fecha_nacimiento,
+            'salario'=>$empleado->salario_bruto,
             'permiso' => $empleado->id_permiso,
             'permiso_name' => $permiso,
             'is_logged' => true
         ]);
+
+        $departamentoUsuario = $modelDepart->getDepartamentoName(session('id_empleado'));
+
+        session()->set([
+            
+            'departamento' => $departamentoUsuario
+        ]);
+
     }
 
 

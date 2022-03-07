@@ -26,7 +26,7 @@
 
                     <ul class="main-nav">
                         <li>
-                            <a href="<?php echo base_url(); ?>/<?= session()->user_id ?>"><i class="mdi mdi-account-convert"></i> Perfil</a>
+                            <a href="<?php echo base_url(); ?>/Empleado/mostrarDatosEmpleadoView"><i class="mdi mdi-account-convert"></i> Perfil</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(route_to('Logout')) ?>"><i class="mdi mdi-logout"></i> Logout</a>
