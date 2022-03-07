@@ -36,7 +36,6 @@ Crear proyecto
                                 <input type="text" class="form-control" id="descripcion">
                             </div>
                             <div class="col-md-6">
-
                                 <label for="form1-fname">Departamento</label>
                                 <select type="text" class="form-control" id="departamento">
                                     <option value="0"></option>
