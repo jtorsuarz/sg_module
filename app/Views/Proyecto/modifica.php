@@ -144,7 +144,7 @@ Modificar Proyecto
                     },
                     error: function(data) {
 
-                        alert("Error al insertar el empleado")
+                        alert("Introduzca un departamento")
                     }
                 })
             }

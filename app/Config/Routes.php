@@ -79,6 +79,9 @@ $routes->group('Empleado', ['filter' => 'authGuard'], ['namespace' => 'App\Contr
 	$routes->get('getDepartJSON', 'Departamento::getListDepartamento_select', ['as' => 'getDepartJSON']);
 
 	$routes->post('delete_DepartamentoDB', 'Departamento::delete_Departamento', ['as' => 'delete_DepartamentoDB']);
+
+	// json 
+	$routes->get('getDepartJSON', 'Departamento::getListDepartamento_select', ['as' => 'getDepartJSON']);
 });
 // PROYECTOS
 $routes->group('Proyecto', ['filter' => 'authGuard'], ['namespace' => 'App\Controllers'], function ($routes) {

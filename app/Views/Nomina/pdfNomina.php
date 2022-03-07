@@ -29,7 +29,7 @@
 
     $pdf->SetFont('Arial','B',10);
     $pdf->setY(40);$pdf->setX(10);
-    $pdf->Cell(40,$textypos,"TRABAJADOR: 000001",1);
+    $pdf->Cell(40,$textypos,"TRABAJADOR: " . session('id_empleado'),1);
     $pdf->setY(40);$pdf->setX(50);
     $pdf->Cell(28,$textypos,"Departamento",1);
     $pdf->setY(40);$pdf->setX(78);
@@ -42,15 +42,15 @@
 
     $pdf->SetFont('Arial','',8);
     $pdf->setY(45);$pdf->setX(10);
-    $pdf->Cell(40,$textypos,"           Ruben Garcia",1);
+    $pdf->Cell(40,$textypos, utf8_decode(session('username')),1);
     $pdf->setY(45);$pdf->setX(50);
-    $pdf->Cell(28,$textypos,"RRHH",1);
+    $pdf->Cell(28,$textypos,session('departamento'),1);
     $pdf->setY(45);$pdf->setX(78);
     $pdf->Cell(38,$textypos,"Grupo 1",1);
     $pdf->setY(45);$pdf->setX(116);
     $pdf->Cell(33,$textypos,"Contrataciones",1);
     $pdf->setY(45);$pdf->setX(149);
-    $pdf->Cell(25,$textypos,"01112730947",1); 
+    $pdf->Cell(25,$textypos,session('dni'),1); 
 
     $pdf->SetFont('Arial','B',10);
     $pdf->setY(50);$pdf->setX(10);
