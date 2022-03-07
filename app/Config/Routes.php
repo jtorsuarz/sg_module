@@ -83,7 +83,7 @@ $routes->group('Proyecto', ['filter' => 'authGuard'], ['namespace' => 'App\Contr
 	$routes->get('index', 'Proyecto::index', ['as' => 'listaProyectoView']);
 	$routes->get('getListaProyectosBD', 'Proyecto::getListaProyectos', ['as' => 'getListaProyectosBD']);
 	$routes->get('nuevoProyectoView', 'Proyecto::nuevoProyectoView', ['as' => 'nuevoProyectoView']);
-	$routes->get('modificaProyectoView', 'Proyecto::modificaProyectoView', ['as' => 'modificaProyectoView']);
+	$routes->get('modificaProyectoView/(:any)', 'Proyecto::modificaProyectoView/$1', ['as' => 'modificaProyectoView']);
 
 
 	// CRUD

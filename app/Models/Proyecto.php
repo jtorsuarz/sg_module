@@ -45,7 +45,7 @@ class Proyecto extends Model
 
         $entityProyecto = new ProyectoEntity($data);
 
-        $this->insert($entityProyecto);
+        $this->save($entityProyecto);
     }
 
     public function delete_Proyecto($id)
